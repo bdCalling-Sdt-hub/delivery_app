@@ -25,7 +25,7 @@ class _ChooseTypeScreenState extends State<ChooseTypeScreen> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(Dimensions.radiusDefault.r)
                 ),
-                child: Image.asset(AppImages.chooseType,width: 393.w,height: 183.h,fit: BoxFit.fitWidth)),
+                child: Image.asset(AppImages.chooseType,width: 394.w,height: 183.h,fit: BoxFit.fitWidth)),
 
 
             SizedBox(height: 27.h),
