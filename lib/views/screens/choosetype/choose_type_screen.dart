@@ -16,122 +16,148 @@ class _ChooseTypeScreenState extends State<ChooseTypeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeDefault.w),
-        child: Column(
-          children: [
-            Container(
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(Dimensions.radiusDefault.r)
-                ),
-                child: Image.asset(AppImages.chooseType,width: 394.w,height: 183.h,fit: BoxFit.fitWidth)),
-
-
-            SizedBox(height: 27.h),
-            GestureDetector(
-              onTap: () {
-                setState(() {
-                  isClientSelected = true;
-                });
-              },
-              child: Container(
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(Dimensions.radiusDefault.r),
-                  color: Colors.white,
-                ),
+      body: Column(
+        children: [
+          Stack(
+            alignment: Alignment.bottomLeft,
+            children: [
+              Image.asset(
+                AppImages.chooseType,
+                width: MediaQuery.of(context).size.width,
+                height: 200.h,
+                fit: BoxFit.cover,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 20.w),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Image.asset(
-                      AppImages.clientImage,
-                      width: 100.w,
-                      height: 100.h,
+                    Text(
+                      "Choose Your Account",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: Dimensions.fontSizeOverLarge.sp,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
                     SizedBox(height: 10.h),
                     Text(
-                      "Client",
+                      "You are a user or delivery person",
+                      textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: Dimensions.fontSizeLarge.sp,
-                        fontWeight: FontWeight.bold,
+                        fontSize: Dimensions.fontSizeDefault.sp,
+                        color: Colors.white70,
                       ),
-                    ),
-                    SizedBox(height: 5.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.check_circle,
-                          color: isClientSelected ? Colors.green : Colors.grey,
-                          size: 20,
-                        ),
-                        SizedBox(width: 5.h),
-                        Text(
-                          "Selected",
-                          style: TextStyle(
-                            fontSize: Dimensions.fontSizeDefault.sp,
-                            color: isClientSelected ? Colors.green : Colors.grey,
-                          ),
-                        ),
-                      ],
                     ),
                   ],
                 ),
               ),
-            ),
-            SizedBox(height: 20.h),
-            GestureDetector(
-              onTap: () {
-                setState(() {
-                  isClientSelected = false;
-                });
-              },
-              child: Container(
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(Dimensions.radiusDefault.r),
-                  color: Colors.white,
-                ),
-                child: Column(
-                  children: [
-                    Image.asset(
-                      AppImages.deliveryImage,
-                      width: 100.w,
-                      height: 100.h,
-                    ),
-                    SizedBox(height: 10.h),
-                    Text(
-                      "Delivery Persons",
-                      style: TextStyle(
-                        fontSize: Dimensions.fontSizeLarge.sp,
-                        fontWeight: FontWeight.bold,
+            ],
+          ),
+          SizedBox(height: 40.h),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius:
+                    BorderRadius.only(topLeft: Radius.circular(50.r))),
+            child: Column(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      isClientSelected = true;
+                    });
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        AppImages.clientImage,
+                        width: 100.w,
+                        height: 100.h,
                       ),
-                    ),
-                    SizedBox(height: 5.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.check_circle,
-                          color: !isClientSelected ? Colors.green : Colors.grey,
-                          size: 20,
+                      SizedBox(height: 10.h),
+                      Text(
+                        "Client",
+                        style: TextStyle(
+                          fontSize: Dimensions.fontSizeLarge.sp,
+                          fontWeight: FontWeight.bold,
                         ),
-                        SizedBox(width: 5.h),
-                        Text(
-                          "Selected",
-                          style: TextStyle(
-                            fontSize: Dimensions.fontSizeDefault.sp,
-                            color: !isClientSelected ? Colors.green : Colors.grey,
+                      ),
+                      SizedBox(height: 5.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.check_circle,
+                            color:
+                                isClientSelected ? Colors.green : Colors.grey,
+                            size: 20,
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
+                          SizedBox(width: 5.h),
+                          Text(
+                            "Selected",
+                            style: TextStyle(
+                              fontSize: Dimensions.fontSizeDefault.sp,
+                              color:
+                                  isClientSelected ? Colors.green : Colors.grey,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
+                SizedBox(height: 27.h),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      isClientSelected = false;
+                    });
+                  },
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        AppImages.deliveryImage,
+                        width: 100.w,
+                        height: 100.h,
+                      ),
+                      SizedBox(height: 10.h),
+                      Text(
+                        "Delivery Persons",
+                        style: TextStyle(
+                          fontSize: Dimensions.fontSizeLarge.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 5.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.check_circle,
+                            color:
+                                !isClientSelected ? Colors.green : Colors.grey,
+                            size: 20,
+                          ),
+                          SizedBox(width: 5.h),
+                          Text(
+                            "Select",
+                            style: TextStyle(
+                              fontSize: Dimensions.fontSizeDefault.sp,
+                              color: !isClientSelected
+                                  ? Colors.green
+                                  : Colors.grey,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
