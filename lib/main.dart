@@ -8,45 +8,42 @@ import 'package:get/get.dart';
 
 import 'helpers/di.dart' as di;
 
-void main()async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Map<String, Map<String, String>> _languages = await di.init();
-  runApp( MyApp(languages:_languages,));
+  // Map<String, Map<String, String>> _languages = await di.init();
+
+  runApp(MyApp(
+      // languages: _languages,
+      ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key, required this.languages});
-  final Map<String, Map<String, String>> languages;
+  const MyApp({
+    super.key,
+  });
+
+  // final Map<String, Map<String, String>> languages;
+
   @override
   Widget build(BuildContext context) {
-
     return ScreenUtilInit(
         designSize: const Size(393, 852),
         minTextAdapt: true,
         splitScreenMode: true,
-        builder: (_ , child) {
+        builder: (_, child) {
           return GetMaterialApp(
             title: AppConstants.APP_NAME,
             debugShowCheckedModeBanner: false,
             navigatorKey: Get.key,
             theme: light(),
             defaultTransition: Transition.topLevel,
-            translations: Messages(languages: languages),
-            fallbackLocale: Locale(AppConstants.languages[0].languageCode, AppConstants.languages[0].countryCode),
+            // translations: Messages(languages: languages),
+            fallbackLocale: Locale(AppConstants.languages[0].languageCode,
+                AppConstants.languages[0].countryCode),
             transitionDuration: const Duration(milliseconds: 500),
             getPages: AppRoutes.routes,
             initialRoute: AppRoutes.splashScreen,
           );
-        }
-    );
+        });
   }
-
-
 }
-
-
-
-
-
-
-

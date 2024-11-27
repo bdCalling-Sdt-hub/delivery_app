@@ -37,37 +37,22 @@ dependencies:
   cupertino_icons: ^1.0.6
   shared_preferences:
   flutter_spinkit:
-  country_code_picker: ^3.0.0
-  pin_code_fields: ^8.0.1
-  image_picker: ^1.1.2
   intl: ^0.19.0
-  carousel_slider: ^5.0.0
-  badges: ^3.1.2
-  timeago: ^3.6.1
+
+
+
   cached_network_image: ^3.3.1
   shimmer: ^3.0.0
-  emoji_picker_flutter: ^2.2.0
-  file_picker: ^5.2.3
+
   fluttertoast: ^8.2.7
 
-
-
-  google_maps_flutter: ^2.1.1
-  geolocator: ^9.0.1
   flutter_svg: ^1.0.3
   flutter_screenutil: ^5.0.0
-  get: ^4.6.1
-  geocoding: ^2.1.0
-  flutter_widget_from_html:
-  socket_io_client: ^3.0.0
-  font_awesome_flutter: ^10.8.0
+  get:
 
-
-  mime_type: ^1.0.1
-  intl_phone_field: ^3.2.0
 
   internet_connection_checker_plus: ^2.5.1
-  dotted_border: ^2.1.0
+
 
 
 dev_dependencies:
@@ -110,9 +95,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-     - family: Roboto
-       fonts:
-         - asset: assets/fonts/Roboto-Regular.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
