@@ -41,7 +41,7 @@ class _ChooseTypeScreenState extends State<ChooseTypeScreen> {
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 12.h),
                     Text(
                       "You are a user or delivery person",
                       textAlign: TextAlign.center,
