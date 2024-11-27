@@ -1,23 +1,23 @@
+import 'package:delivery_app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import '../../../controllers/client/choose_type_controller.dart';
 import '../../../utils/app_dimensions.dart';
 import '../../../utils/app_images.dart';
 
-class ChooseTypeScreen extends StatefulWidget {
+class ChooseTypeScreen extends StatelessWidget {
   const ChooseTypeScreen({Key? key}) : super(key: key);
 
   @override
-  State<ChooseTypeScreen> createState() => _ChooseTypeScreenState();
-}
-
-class _ChooseTypeScreenState extends State<ChooseTypeScreen> {
-  bool isClientSelected = true;
-
-  @override
   Widget build(BuildContext context) {
+
+    final ScreenTypeController controller = Get.put(ScreenTypeController());
+
     return Scaffold(
       body: Column(
         children: [
+          /// ====================================> Image ====================================>
           Stack(
             alignment: Alignment.bottomLeft,
             children: [
@@ -31,6 +31,7 @@ class _ChooseTypeScreenState extends State<ChooseTypeScreen> {
                 padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 20.w),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  /// ====================================> text ====================================>
                   children: [
                     Text(
                       "Choose Your Account",
@@ -55,27 +56,29 @@ class _ChooseTypeScreenState extends State<ChooseTypeScreen> {
               ),
             ],
           ),
-          SizedBox(height: 52.h),
+          SizedBox(height: 68.h),
+          /// ====================================> Client ====================================>
           Container(
             decoration: BoxDecoration(
                 borderRadius:
-                    BorderRadius.only(topLeft: Radius.circular(50.r))),
+                BorderRadius.only(topLeft: Radius.circular(50.r))),
             child: Column(
               children: [
                 GestureDetector(
                   onTap: () {
-                    setState(() {
-                      isClientSelected = true;
+                    controller.selectClient();
+                    Future.delayed(const Duration(milliseconds: 100), () {
+                      Get.toNamed(AppRoutes.signUpScreen);
                     });
                   },
                   child: Column(
                     children: [
                       Image.asset(
                         AppImages.clientImage,
-                        width: 100.w,
-                        height: 100.h,
+                        width: 144.w,
+                        height: 144.h,
                       ),
-                      SizedBox(height: 10.h),
+                      SizedBox(height: 20.h),
                       Text(
                         "Client",
                         style: TextStyle(
@@ -83,14 +86,13 @@ class _ChooseTypeScreenState extends State<ChooseTypeScreen> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 5.h),
-                      Row(
+                      SizedBox(height: 16.h),
+                      Obx(() => Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
                             Icons.check_circle,
-                            color:
-                                isClientSelected ? Colors.green : Colors.grey,
+                            color: controller.isClientSelected.value ? Colors.green : Colors.grey,
                             size: 20,
                           ),
                           SizedBox(width: 5.h),
@@ -98,30 +100,29 @@ class _ChooseTypeScreenState extends State<ChooseTypeScreen> {
                             "Selected",
                             style: TextStyle(
                               fontSize: Dimensions.fontSizeDefault.sp,
-                              color:
-                                  isClientSelected ? Colors.green : Colors.grey,
+                              color: controller.isClientSelected.value ? Colors.green : Colors.grey,
                             ),
                           ),
                         ],
-                      ),
+                      )),
                     ],
                   ),
                 ),
-                SizedBox(height: 27.h),
+
+                SizedBox(height: 49.h),
+                /// ====================================> Delivery person ====================================>
                 GestureDetector(
                   onTap: () {
-                    setState(() {
-                      isClientSelected = false;
-                    });
+                    controller.selectDeliveryPerson();
                   },
                   child: Column(
                     children: [
                       Image.asset(
                         AppImages.deliveryImage,
-                        width: 100.w,
-                        height: 100.h,
+                        width: 144.w,
+                        height: 144.h,
                       ),
-                      SizedBox(height: 10.h),
+                      SizedBox(height: 20.h),
                       Text(
                         "Delivery Persons",
                         style: TextStyle(
@@ -130,27 +131,27 @@ class _ChooseTypeScreenState extends State<ChooseTypeScreen> {
                         ),
                       ),
                       SizedBox(height: 5.h),
-                      Row(
+                      Obx(() => Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
                             Icons.check_circle,
                             color:
-                                !isClientSelected ? Colors.green : Colors.grey,
+                            !controller.isClientSelected.value ? Colors.green : Colors.grey,
                             size: 20,
                           ),
-                          SizedBox(width: 5.h),
+                          SizedBox(width: 16.h),
                           Text(
                             "Select",
                             style: TextStyle(
                               fontSize: Dimensions.fontSizeDefault.sp,
-                              color: !isClientSelected
+                              color: !controller.isClientSelected.value
                                   ? Colors.green
                                   : Colors.grey,
                             ),
                           ),
                         ],
-                      ),
+                      )),
                     ],
                   ),
                 ),
@@ -162,3 +163,4 @@ class _ChooseTypeScreenState extends State<ChooseTypeScreen> {
     );
   }
 }
+

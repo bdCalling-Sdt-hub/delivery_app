@@ -46,7 +46,7 @@ class CustomText extends StatelessWidget {
         overflow: textOverflow??TextOverflow.ellipsis,
         style: TextStyle(
           fontSize: fontsize ?? 14.h,
-          fontFamily:fontName?? "Nunito",
+          fontFamily:fontName?? "Roboto",
           fontWeight:fontWeight ?? FontWeight.w400 ,
           color: color ??  const Color(0xff333333),
         ),
