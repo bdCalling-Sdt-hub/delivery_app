@@ -55,7 +55,7 @@ class _ChooseTypeScreenState extends State<ChooseTypeScreen> {
               ),
             ],
           ),
-          SizedBox(height: 50.h),
+          SizedBox(height: 52.h),
           Container(
             decoration: BoxDecoration(
                 borderRadius:
