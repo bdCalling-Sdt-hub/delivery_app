@@ -29,7 +29,6 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
 
-    final SignUpController signUpController = Get.put(SignUpController());
 
     return Scaffold(
       backgroundColor: AppColors.textColorFFFFFF,
@@ -143,7 +142,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   SizedBox(height: 20.h),
                   CustomGradientButton(onTap: (){
-                    Get.toNamed(AppRoutes.verifyEmailAddressScreen);
+                    // Get.toNamed(AppRoutes.verifyEmailAddressScreen);
 
                   }, title: 'Log In'),
                   SizedBox(height: 47.h),
