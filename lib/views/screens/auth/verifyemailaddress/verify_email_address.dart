@@ -1,19 +1,12 @@
-import 'package:delivery_app/utils/app_colors.dart';
-import 'package:delivery_app/views/widgets/custom_button.dart';
-import 'package:delivery_app/views/widgets/custom_text.dart';
+import 'dart:async';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
-import '../../../../controllers/auth/sign_up_controller.dart';
-import '../../../../routes/app_routes.dart';
-import '../../../../utils/app_constants.dart';
+import 'package:delivery_app/utils/app_colors.dart';
 import '../../../../utils/app_dimensions.dart';
 import '../../../../utils/app_images.dart';
 import '../../../widgets/custom_pin_code_text_field.dart';
-import '../../../widgets/custom_text_field.dart';
+import 'package:delivery_app/views/widgets/custom_button.dart';
 
 class VerifyEmailAddressScreen extends StatefulWidget {
   const VerifyEmailAddressScreen({Key? key}) : super(key: key);
@@ -23,11 +16,45 @@ class VerifyEmailAddressScreen extends StatefulWidget {
 }
 
 class _VerifyEmailAddressScreenState extends State<VerifyEmailAddressScreen> {
+
+
   TextEditingController otpCtrl = TextEditingController();
+
+  late ValueNotifier<int> _countdown;
+  late ValueNotifier<bool> _isCountingDown;
+  Timer? _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _countdown = ValueNotifier<int>(120);
+    _isCountingDown = ValueNotifier<bool>(true);
+    startCountdown();
+  }
+
+  void startCountdown() {
+    _isCountingDown.value = true;
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (_countdown.value > 0) {
+        _countdown.value--;
+      } else {
+        timer.cancel();
+        _isCountingDown.value = false;
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    _countdown.dispose();
+    _isCountingDown.dispose();
+    otpCtrl.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: AppColors.textColorFFFFFF,
       body: SingleChildScrollView(
@@ -47,8 +74,8 @@ class _VerifyEmailAddressScreenState extends State<VerifyEmailAddressScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 20.w),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    /// ====================================> text ====================================>
                     children: [
+                      /// ====================================> Text ====================================>
                       Text(
                         "Verify Email Address",
                         textAlign: TextAlign.center,
@@ -60,7 +87,7 @@ class _VerifyEmailAddressScreenState extends State<VerifyEmailAddressScreen> {
                       ),
                       SizedBox(height: 12.h),
                       Text(
-                        "Enter the 6 digit code that we sent on your ingot423@gmail.com",
+                        "Enter the 6 digit code that we sent on your email.",
                         textAlign: TextAlign.start,
                         style: TextStyle(
                           fontSize: Dimensions.fontSizeDefault.sp,
@@ -73,7 +100,7 @@ class _VerifyEmailAddressScreenState extends State<VerifyEmailAddressScreen> {
               ],
             ),
             SizedBox(height: 20.h),
-            /// ===============================> otp ====================================>
+            /// ===============================> OTP ====================================>
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: Dimensions.paddingSizeSmall, vertical: 16.h),
@@ -85,34 +112,49 @@ class _VerifyEmailAddressScreenState extends State<VerifyEmailAddressScreen> {
               padding: EdgeInsets.symmetric(
                   horizontal: Dimensions.paddingSizeSmall, vertical: 16.h),
               child: CustomGradientButton(
-                  onTap: (){},
+                  onTap: () {
+                    // Add verification logic
+                  },
                   title: 'Verify Code'),
             ),
             SizedBox(height: 32.h),
             /// ======================================> Resend ===============================>
             Center(
-              child: TextButton(
-                onPressed: () {
-
-                },
-                child: RichText(
-                  text: TextSpan(
-                    text: 'Didn’t the code? ',
-                    style: TextStyle(color: AppColors.textColor333333, fontSize: 14.sp),
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: 'Resend Code',
-                        style: TextStyle(color: AppColors.primaryColor, fontSize: 14.sp),
-                        recognizer: TapGestureRecognizer()..onTap = (){
-                          // Get.toNamed(AppRoutes.signInScreen);
-                        },
+              child: ValueListenableBuilder<int>(
+                valueListenable: _countdown,
+                builder: (context, countdown, child) {
+                  return RichText(
+                    text: TextSpan(
+                      text: 'Didn’t receive the code? ',
+                      style: TextStyle(
+                        color: AppColors.textColor333333,
+                        fontSize: 14.sp,
                       ),
-                    ],
-                  ),
-                ),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: countdown > 0
+                              ? 'Resend in ${countdown}s'
+                              : 'Resend Code',
+                          style: TextStyle(
+                            color: countdown > 0
+                                ? AppColors.greenTextColor669B27
+                                : AppColors.primaryColor,
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = countdown > 0
+                                ? null
+                                : () {
+                              startCountdown(); // Restart countdown
+                            },
+                        ),
+                      ],
+                    ),
+                  );
+                },
               ),
             ),
-            
 
           ],
         ),
@@ -120,4 +162,3 @@ class _VerifyEmailAddressScreenState extends State<VerifyEmailAddressScreen> {
     );
   }
 }
-

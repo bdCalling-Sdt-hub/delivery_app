@@ -8,6 +8,8 @@ class AppImages {
   static const String splashBgImage = '$path/SplashImage.png';
   static const String clientImage = '$path/client.png';
   static const String deliveryImage = '$path/delivery.png';
+  static const String submitImage = '$path/submit.png';
+  static const String linkImage = '$path/links.png';
 
 
 }
