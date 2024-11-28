@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
-import '../../../../controllers/auth/sign_up_controller.dart';
 import '../../../../routes/app_routes.dart';
 import '../../../../utils/app_constants.dart';
 import '../../../../utils/app_dimensions.dart';
@@ -142,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   SizedBox(height: 20.h),
                   CustomGradientButton(onTap: (){
-                    // Get.toNamed(AppRoutes.verifyEmailAddressScreen);
+                    Get.toNamed(AppRoutes.clientHomeScreen);
 
                   }, title: 'Log In'),
                   SizedBox(height: 47.h),

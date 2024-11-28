@@ -10,6 +10,7 @@ class AppImages {
   static const String deliveryImage = '$path/delivery.png';
   static const String submitImage = '$path/submit.png';
   static const String linkImage = '$path/links.png';
+  static const String successImage = '$path/success.png';
 
 
 }
