@@ -3,6 +3,8 @@ import 'package:delivery_app/views/screens/auth/login/login_screen.dart';
 import 'package:delivery_app/views/screens/auth/signup/sign_up_screen.dart';
 import 'package:delivery_app/views/screens/auth/verifyemailaddress/verify_email_address.dart';
 import 'package:delivery_app/views/screens/choosetype/choose_type_screen.dart';
+import 'package:delivery_app/views/screens/client/clienthome/client_home_screen.dart';
+import 'package:delivery_app/views/screens/client/clienthome/client_home_successfull_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import '../views/screens/splash/splash_screen.dart';
@@ -14,6 +16,8 @@ class AppRoutes {
   static const String verifyEmailAddressScreen = "/VerifyEmailAddressScreen.dart";
   static const String loginScreen = "/LoginScreenScreen.dart";
   static const String forgotPasswordScreen = "/ForgotPasswordScreen.dart";
+  static const String clientHomeScreen = "/ClientHomeScreen.dart";
+  static const String clientHomeScreenSuccessfulScreen = "/ClientHomeScreenSuccessfulScreen.dart";
 
 
   static List<GetPage> get routes => [
@@ -23,5 +27,7 @@ class AppRoutes {
     GetPage(name: verifyEmailAddressScreen, page: () => VerifyEmailAddressScreen()),
     GetPage(name: loginScreen, page: () => LoginScreen()),
     GetPage(name: forgotPasswordScreen, page: () => ForgotPasswordScreen()),
+    GetPage(name: clientHomeScreen, page: () => ClientHomeScreen()),
+    GetPage(name: clientHomeScreenSuccessfulScreen, page: () => ClientHomeScreenSuccessfulScreen()),
   ];
 }
