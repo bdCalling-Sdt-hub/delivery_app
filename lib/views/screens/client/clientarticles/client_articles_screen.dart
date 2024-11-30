@@ -1,130 +1,130 @@
-import 'package:delivery_app/routes/app_routes.dart';
-import 'package:delivery_app/utils/app_colors.dart';
-import 'package:delivery_app/views/screens/client/client_bottom_navbar/client-bottm_navbar_screen.dart';
-import 'package:delivery_app/views/widgets/custom_button.dart';
-import 'package:delivery_app/views/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import '../../../../routes/app_routes.dart';
+import '../../../../utils/app_colors.dart';
+import '../../../../utils/app_images.dart';
+import '../../../widgets/advanced_card.dart';
+import '../../../widgets/custom_text.dart';
+import '../../../widgets/beginners_card.dart';
+import '../../../widgets/tips_card.dart';
+import '../client_bottom_navbar/client-bottm_navbar_screen.dart';
 
-import '../../../../controllers/client/client_home_controller.dart';
-
-class ClientArticlScreen extends StatelessWidget {
-  const ClientArticlScreen({super.key});
+class ClientArticleScreen extends StatelessWidget {
+  const ClientArticleScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(ClientHomeController());
-
     return Scaffold(
-      bottomNavigationBar: ClientBottomNavBar(0),
+      bottomNavigationBar: ClientBottomNavBar(1),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [Color(0xFFF0F5E9), Color(0xFFFFFFFF)],
-            stops: [0.2075, 1.0],
           ),
         ),
         child: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
+          child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 20.h),
-                ///====================================> User Greeting Section =====================================>
-                _buildUserGreetingSection(),
-                SizedBox(height: 30.h),
 
-                /// ===================================> Page Title Section ==============================>
-                CustomText(
-                  text: 'New request',
-                  fontsize: 24.sp,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors.textColor020202,
-                ),
-                SizedBox(height: 2.h),
-                CustomText(
-                  text: 'Add below details to place new request.',
-                  fontsize: 14.sp,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.textColor6C6E72,
-                ),
-                SizedBox(height: 24.h),
-
-                /// ==============================> Request Type Dropdown ================================>
-                CustomText(
-                  text: 'Request Type',
-                  fontsize: 14.sp,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.textColor333333,
-                ),
-                SizedBox(height: 11.h),
-                DropdownButtonFormField<String>(
-                  decoration: InputDecoration(
-                    hintText: 'Select type',
-                    hintStyle: TextStyle(fontSize: 14.sp, color: const Color(0xFFB1B1B1)),
-                    filled: true,
-                    fillColor: const Color(0xFFEDEDEE),
-                    contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 12.w),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8.r),
-                      borderSide: const BorderSide(color: Color(0xFFEDEDEE)),
+                /// =======================================> Header Section =========================================>
+                Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: [
+                    Image.asset(
+                      AppImages.articleImage,
+                      width: MediaQuery.of(context).size.width,
+                      height: 135.h,
+                      fit: BoxFit.cover,
                     ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8.r),
-                      borderSide: const BorderSide(color: Color(0xFFEDEDEE)),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 30.h),
+                      child: Text(
+                        "Articles",
+                        style: TextStyle(
+                          fontSize: 22.sp,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
-                  ),
-                  icon: Icon(Icons.arrow_drop_down, size: 24.sp, color: const Color(0xFF7A7A7A)),
-                  items: controller.requestTypes
-                      .map((type) => DropdownMenuItem(value: type, child: Text(type, style: TextStyle(fontSize: 14.sp))))
-                      .toList(),
-                  onChanged: (value) => controller.selectedRequestType.value = value ?? '',
-                  dropdownColor: Colors.white,
+                  ],
                 ),
+                SizedBox(height: 18.h),
 
-                SizedBox(height: 20.h),
-
-                /// ==============================>  Quantity Field ============================>
-                CustomText(
-                  text: 'Quantity',
-                  fontsize: 14.sp,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.textColor333333,
-                ),
-                SizedBox(height: 10.h),
-                TextField(
-                  keyboardType: TextInputType.number,
-                  onChanged: (value) => controller.quantity.value = value,
-                  decoration: InputDecoration(
-                    hintText: 'Enter quantity',
-                    hintStyle: TextStyle(fontSize: 14.sp, color: const Color(0xFFB1B1B1)),
-                    filled: true,
-                    contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 12.w),
-                    fillColor: const Color(0xFFEDEDEE),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
-                    ),
-                  ),
-
-                ),
-                SizedBox(height: 40.h),
-                /// ==========================> Validate Button ====================================?
-                CustomGradientButton(
-                  onTap: (){
-                    Get.toNamed(AppRoutes.clientHomeScreenSuccessfulScreen);
+                /// ==================================> Beginners Section Header =======================================>
+                _buildSectionHeader(
+                  context,
+                  title: "Beginners",
+                  onTap: () {
+                    Get.toNamed(AppRoutes.beginnersScreen);
                   },
-                  title: 'Validate my request',
                 ),
+                SizedBox(height: 14.h),
+
+                /// =================================> Beginners Cards Grid ====================================>
+                _buildGridSection(4, (context, index) {
+                  return BeginnersCard(
+                    imageUrl: AppImages.articlesImage,
+                    name: "Common Delivery",
+                    title: "Lorem ipsum dolor sit amet consectetur.",
+                    subtitle: "Subtitle here",
+                    icon: AppImages.bookmarkImage,
+                    onTap: () {
+                      Get.toNamed(AppRoutes.articleDetailsScreen);
+                    },
+                  );
+                }),
+                SizedBox(height: 20.h),
+                /// ===================================>  Advanced Section Header =================================>
+                _buildSectionHeader(
+                  context,
+                  title: "Advanced",
+                  onTap: () {
+                    Get.toNamed(AppRoutes.advancedScreen);
+                  },
+                ),
+                SizedBox(height: 14.h),
+
+                /// ==============================>Advanced Cards Grid =============================>
+                _buildGridSection(2, (context, index) {
+                  return AdvancedCard(
+                    imageUrl: AppImages.advancedImage,
+                    name: "The Future of Package",
+                    title: "Lorem ipsum dolor sit amet consectetur.",
+                    subtitle: "Subtitle here",
+                    icon: AppImages.bookmarkImage,
+                    onTap: () {},
+                  );
+                }),
+                SizedBox(height: 20.h),
+                /// ===========================> Tips Section Header ===============================>
+                _buildSectionHeader(
+                  context,
+                  title: "Tips",
+                  onTap: () {
+                    Get.toNamed(AppRoutes.tipsScreen);
+                  },
+                ),
+                SizedBox(height: 14.h),
+                /// =====================>  Tips Cards Grid ===============================>
+                _buildGridSection(2, (context, index) {
+                  return TipsCard(
+                    imageUrl: AppImages.tipsImage,
+                    name: "Top 5 Tips",
+                    title: "Lorem ipsum dolor sit amet consectetur.",
+                    subtitle: "Subtitle here",
+                    icon: AppImages.bookmarkImage,
+                    onTap: () {},
+                  );
+                }),
+                SizedBox(height: 20.h),
               ],
             ),
           ),
@@ -132,81 +132,61 @@ class ClientArticlScreen extends StatelessWidget {
       ),
     );
   }
-
-  /// ===================================> User Greeting Section Widget =========================>
-  Widget _buildUserGreetingSection() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Row(
-          children: [
-            CircleAvatar(
-              radius: 25.r,
-              backgroundImage: const AssetImage('assets/images/homeprofile.png'),
-            ),
-            SizedBox(width: 16.w),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+/// ======================================> SectionHeader ==================================>
+  Widget _buildSectionHeader(BuildContext context,
+      {required String title, required VoidCallback onTap}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          CustomText(
+            text: title,
+            fontsize: 18.sp,
+            fontWeight: FontWeight.w600,
+            color: AppColors.textColor020202,
+          ),
+          GestureDetector(
+            onTap: onTap,
+            child: Row(
               children: [
                 CustomText(
-                  text: 'Welcome Back,',
+                  text: 'See all',
                   fontsize: 14.sp,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.textColor6C6E72,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.redF37B1C,
                 ),
-                SizedBox(height: 6.h),
-                CustomText(
-                  text: 'Ronald Richards',
-                  fontsize: 18.sp,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.textColor020202,
-                ),
-              ],
-            ),
-          ],
-        ),
-        Row(
-          children: [
-            Stack(
-              children: [
+                SizedBox(width: 6.w),
                 SvgPicture.asset(
-                  'assets/icons/notification.svg',
-                  width: 24.w,
-                  height: 24.h,
-                ),
-                Positioned(
-                  right: 0,
-                  top: 0,
-                  child: Container(
-                    width: 12.w,
-                    height: 12.h,
-                    decoration: const BoxDecoration(
-                      color: Colors.red,
-                      shape: BoxShape.circle,
-                    ),
-                    child: Center(
-                      child: Text(
-                        '1',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
+                  'assets/icons/getterthan.svg',
+                  width: 8.w,
+                  height: 12.h,
                 ),
               ],
             ),
-            SizedBox(width: 14.w),
-            SvgPicture.asset(
-              'assets/icons/dropdown.svg',
-              width: 24.w,
-              height: 24.h,
-            ),
-          ],
-        )
-      ],
+          ),
+        ],
+      ),
+    );
+  }
+  /// ======================================> Grid SectionHeader ==================================>
+  Widget _buildGridSection(
+      int itemCount, Widget Function(BuildContext, int) itemBuilder) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
+      child: GridView.builder(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        padding: EdgeInsets.symmetric(vertical: 16.h),
+        itemCount: itemCount,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 16.w,
+          mainAxisSpacing: 20.h,
+          childAspectRatio: 0.85,
+        ),
+        itemBuilder: itemBuilder,
+      ),
     );
   }
 }
