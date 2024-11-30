@@ -16,6 +16,7 @@ class AppImages {
   static const String bookmarkImage = '$path/bookmark.png';
   static const String tipsImage = '$path/tipes.png';
   static const String advancedImage = '$path/advanced.png';
+  static const String arrowImage = '$path/arrowright.png';
 
 
 }

@@ -99,7 +99,7 @@ class _ClientBottomNavBarState extends State<ClientBottomNavBar> {
                 Get.offAndToNamed(AppRoutes.clientArticleScreen);
                 break;
               case 2:
-                // Get.offAndToNamed(AppRoutes.ownerNotificationScreen);
+                Get.offAndToNamed(AppRoutes.historyScreen);
                 break;
               case 3:
                 // Get.offAndToNamed(AppRoutes.ownerProfileScreen);

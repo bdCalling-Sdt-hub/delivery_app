@@ -3,6 +3,7 @@ import 'package:delivery_app/views/screens/auth/login/login_screen.dart';
 import 'package:delivery_app/views/screens/auth/signup/sign_up_screen.dart';
 import 'package:delivery_app/views/screens/auth/verifyemailaddress/verify_email_address.dart';
 import 'package:delivery_app/views/screens/choosetype/choose_type_screen.dart';
+import 'package:delivery_app/views/screens/client/client_history/history_screen.dart';
 import 'package:delivery_app/views/screens/client/clientarticles/advanced_screen.dart';
 import 'package:delivery_app/views/screens/client/clientarticles/article_details_screen.dart';
 import 'package:delivery_app/views/screens/client/clientarticles/beginners_screen.dart';
@@ -28,6 +29,7 @@ class AppRoutes {
   static const String advancedScreen = "/AdvancedScreen.dart";
   static const String tipsScreen = "/TipsScreen.dart";
   static const String articleDetailsScreen = "/articleDetailsScreen.dart";
+  static const String historyScreen = "/HistoryScreen.dart";
 
 
   static List<GetPage> get routes => [
@@ -44,5 +46,6 @@ class AppRoutes {
     GetPage(name: advancedScreen, page: () => AdvancedScreen()),
     GetPage(name: tipsScreen, page: () => TipsScreen()),
     GetPage(name: articleDetailsScreen, page: () => ArticleDetailsScreen()),
+    GetPage(name: historyScreen, page: () => HistoryScreen()),
   ];
 }
