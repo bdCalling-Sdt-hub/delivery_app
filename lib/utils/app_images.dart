@@ -11,6 +11,11 @@ class AppImages {
   static const String submitImage = '$path/submit.png';
   static const String linkImage = '$path/links.png';
   static const String successImage = '$path/success.png';
+  static const String articleImage = '$path/article.png';
+  static const String articlesImage = '$path/articles.png';
+  static const String bookmarkImage = '$path/bookmark.png';
+  static const String tipsImage = '$path/tipes.png';
+  static const String advancedImage = '$path/advanced.png';
 
 
 }

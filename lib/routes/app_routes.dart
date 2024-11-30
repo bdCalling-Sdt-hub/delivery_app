@@ -3,6 +3,11 @@ import 'package:delivery_app/views/screens/auth/login/login_screen.dart';
 import 'package:delivery_app/views/screens/auth/signup/sign_up_screen.dart';
 import 'package:delivery_app/views/screens/auth/verifyemailaddress/verify_email_address.dart';
 import 'package:delivery_app/views/screens/choosetype/choose_type_screen.dart';
+import 'package:delivery_app/views/screens/client/clientarticles/advanced_screen.dart';
+import 'package:delivery_app/views/screens/client/clientarticles/article_details_screen.dart';
+import 'package:delivery_app/views/screens/client/clientarticles/beginners_screen.dart';
+import 'package:delivery_app/views/screens/client/clientarticles/client_articles_screen.dart';
+import 'package:delivery_app/views/screens/client/clientarticles/tips_screen.dart';
 import 'package:delivery_app/views/screens/client/clienthome/client_home_screen.dart';
 import 'package:delivery_app/views/screens/client/clienthome/client_home_successfull_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
@@ -18,6 +23,11 @@ class AppRoutes {
   static const String forgotPasswordScreen = "/ForgotPasswordScreen.dart";
   static const String clientHomeScreen = "/ClientHomeScreen.dart";
   static const String clientHomeScreenSuccessfulScreen = "/ClientHomeScreenSuccessfulScreen.dart";
+  static const String clientArticleScreen = "/ClientArticleScreen.dart";
+  static const String beginnersScreen = "/BeginnersScreen.dart";
+  static const String advancedScreen = "/AdvancedScreen.dart";
+  static const String tipsScreen = "/TipsScreen.dart";
+  static const String articleDetailsScreen = "/articleDetailsScreen.dart";
 
 
   static List<GetPage> get routes => [
@@ -29,5 +39,10 @@ class AppRoutes {
     GetPage(name: forgotPasswordScreen, page: () => ForgotPasswordScreen()),
     GetPage(name: clientHomeScreen, page: () => ClientHomeScreen()),
     GetPage(name: clientHomeScreenSuccessfulScreen, page: () => ClientHomeScreenSuccessfulScreen()),
+    GetPage(name: clientArticleScreen, page: () => ClientArticleScreen()),
+    GetPage(name: beginnersScreen, page: () => BeginnersScreen()),
+    GetPage(name: advancedScreen, page: () => AdvancedScreen()),
+    GetPage(name: tipsScreen, page: () => TipsScreen()),
+    GetPage(name: articleDetailsScreen, page: () => ArticleDetailsScreen()),
   ];
 }

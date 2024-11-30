@@ -96,7 +96,7 @@ class _ClientBottomNavBarState extends State<ClientBottomNavBar> {
                 Get.offAndToNamed(AppRoutes.clientHomeScreen);
                 break;
               case 1:
-                // Get.offAndToNamed(AppRoutes.ownerReviewScreen);
+                Get.offAndToNamed(AppRoutes.clientArticleScreen);
                 break;
               case 2:
                 // Get.offAndToNamed(AppRoutes.ownerNotificationScreen);
