@@ -4,8 +4,8 @@ import 'package:delivery_app/views/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../../../utils/app_colors.dart';
-import '../../../widgets/custom_text.dart';
+import '../../../../../utils/app_colors.dart';
+import '../../../../widgets/custom_text.dart';
 
 class ClientHomeScreenSuccessfulScreen extends StatelessWidget {
   ClientHomeScreenSuccessfulScreen({super.key});
