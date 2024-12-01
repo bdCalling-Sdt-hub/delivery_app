@@ -3,6 +3,7 @@ import 'package:delivery_app/views/screens/auth/login/login_screen.dart';
 import 'package:delivery_app/views/screens/auth/signup/sign_up_screen.dart';
 import 'package:delivery_app/views/screens/auth/verifyemailaddress/verify_email_address.dart';
 import 'package:delivery_app/views/screens/choosetype/choose_type_screen.dart';
+import 'package:delivery_app/views/screens/client/client_history/history_screen.dart';
 import 'package:delivery_app/views/screens/client/clientarticles/advanced_screen.dart';
 import 'package:delivery_app/views/screens/client/clientarticles/article_details_screen.dart';
 import 'package:delivery_app/views/screens/client/clientarticles/beginners_screen.dart';
@@ -10,6 +11,7 @@ import 'package:delivery_app/views/screens/client/clientarticles/client_articles
 import 'package:delivery_app/views/screens/client/clientarticles/tips_screen.dart';
 import 'package:delivery_app/views/screens/client/clienthome/client_home_screen.dart';
 import 'package:delivery_app/views/screens/client/clienthome/client_home_successfull_screen.dart';
+import 'package:delivery_app/views/screens/client/clienthome/menu/menu_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import '../views/screens/splash/splash_screen.dart';
@@ -28,6 +30,8 @@ class AppRoutes {
   static const String advancedScreen = "/AdvancedScreen.dart";
   static const String tipsScreen = "/TipsScreen.dart";
   static const String articleDetailsScreen = "/articleDetailsScreen.dart";
+  static const String historyScreen = "/HistoryScreen.dart";
+  static const String menuScreen = "/MenuScreen.dart";
 
 
   static List<GetPage> get routes => [
@@ -44,5 +48,7 @@ class AppRoutes {
     GetPage(name: advancedScreen, page: () => AdvancedScreen()),
     GetPage(name: tipsScreen, page: () => TipsScreen()),
     GetPage(name: articleDetailsScreen, page: () => ArticleDetailsScreen()),
+    GetPage(name: historyScreen, page: () => HistoryScreen()),
+    GetPage(name: menuScreen, page: () => MenuScreen()),
   ];
 }
