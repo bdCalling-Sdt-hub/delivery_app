@@ -17,6 +17,9 @@ class AppImages {
   static const String tipsImage = '$path/tipes.png';
   static const String advancedImage = '$path/advanced.png';
   static const String arrowImage = '$path/arrowright.png';
+  static const String informativeImage = '$path/informative.png';
+  static const String playImage = '$path/play.png';
+  static const String profileImage = '$path/profile.png';
 
 
 }

@@ -8,7 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import '../../../../controllers/client/client_home_controller.dart';
+import '../../../../../controllers/client/client_home_controller.dart';
 
 class ClientHomeScreen extends StatelessWidget {
   const ClientHomeScreen({super.key});
@@ -171,7 +171,7 @@ class ClientHomeScreen extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: (){
-                    // Get.toNamed(AppRoutes.splashScreen);
+                    Get.toNamed(AppRoutes.notificationScreen);
                   },
                   child: SvgPicture.asset(
                     'assets/icons/notification.svg',

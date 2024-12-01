@@ -1,7 +1,9 @@
+import 'package:delivery_app/routes/app_routes.dart';
 import 'package:delivery_app/views/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 import '../../../../../utils/app_colors.dart';
 
@@ -99,7 +101,9 @@ class MenuScreen extends StatelessWidget {
                         _menuItem(
                           icon: Icons.help_outline,
                           title: "FAQ’s",
-                          onTap: () {},
+                          onTap: () {
+                            Get.toNamed(AppRoutes.faqsScreen);
+                          },
                         ),
                         Divider(height: 1.h, color: AppColors.backgroundColorF0F5E9),
                         _menuItem(
@@ -128,7 +132,9 @@ class MenuScreen extends StatelessWidget {
                         _menuItem(
                           icon: Icons.notifications_none,
                           title: "Notification",
-                          onTap: () {},
+                          onTap: () {
+                            Get.toNamed(AppRoutes.notificationScreen);
+                          },
                         ),
                         Divider(height: 1.h, color:AppColors.backgroundColorF0F5E9),
                         _menuItem(

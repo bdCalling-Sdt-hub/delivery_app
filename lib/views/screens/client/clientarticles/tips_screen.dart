@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_images.dart';
-import '../../../widgets/advanced_card.dart';
 import '../../../widgets/custom_text.dart';
 import '../../../widgets/tips_card.dart';
 import '../client_bottom_navbar/client-bottm_navbar_screen.dart';
