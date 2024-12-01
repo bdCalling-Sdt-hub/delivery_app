@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import '../../../../controllers/history/history_controller.dart';
 import '../../../../utils/app_images.dart';
 import '../../../widgets/history_card.dart';
 import '../client_bottom_navbar/client-bottm_navbar_screen.dart';
 
 class HistoryScreen extends StatelessWidget {
-  const HistoryScreen({super.key});
+  HistoryScreen({super.key});
+
+  final HistoryController controller = Get.put(HistoryController());
 
   @override
   Widget build(BuildContext context) {
@@ -25,19 +28,16 @@ class HistoryScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                /// ===============================> Header Section with Icons =================================>
+                /// ==============================>Header Section ============================>
                 Stack(
                   alignment: Alignment.bottomCenter,
                   children: [
-                    /// Background Image
                     Image.asset(
                       AppImages.articleImage,
                       width: MediaQuery.of(context).size.width,
                       height: 135.h,
                       fit: BoxFit.cover,
                     ),
-
-                    /// Header Title
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 32.h),
                       child: Text(
@@ -52,13 +52,14 @@ class HistoryScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 15.h),
-                /// ===============================> History Section =================================>
+
+                /// ===============================> History List Section =====================>
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
-                  child: ListView.builder(
+                  child: Obx(() => ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 5, // Number of cards
+                    itemCount: controller.subtitles.length,
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: EdgeInsets.only(bottom: 10.h),
@@ -67,15 +68,13 @@ class HistoryScreen extends StatelessWidget {
                           index: index,
                           name: "Bucket Package",
                           title: "Quantity: 01",
-                          subtitle: "12/04/2024",
+                          subtitle: controller.subtitles[index],
                           icon: '',
-                          onTap: () {
-                            // On tap action
-                          },
+                          onTap: () => controller.pickDate(index),
                         ),
                       );
                     },
-                  ),
+                  )),
                 ),
               ],
             ),

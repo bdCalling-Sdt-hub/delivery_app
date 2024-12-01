@@ -169,10 +169,15 @@ class ClientHomeScreen extends StatelessWidget {
           children: [
             Stack(
               children: [
-                SvgPicture.asset(
-                  'assets/icons/notification.svg',
-                  width: 24.w,
-                  height: 24.h,
+                GestureDetector(
+                  onTap: (){
+                    // Get.toNamed(AppRoutes.splashScreen);
+                  },
+                  child: SvgPicture.asset(
+                    'assets/icons/notification.svg',
+                    width: 24.w,
+                    height: 24.h,
+                  ),
                 ),
                 Positioned(
                   right: 0,
@@ -198,11 +203,17 @@ class ClientHomeScreen extends StatelessWidget {
                 ),
               ],
             ),
+            /// ==================================> Menu ========================================>
             SizedBox(width: 14.w),
-            SvgPicture.asset(
-              'assets/icons/dropdown.svg',
-              width: 24.w,
-              height: 24.h,
+            GestureDetector(
+              onTap: (){
+                Get.toNamed(AppRoutes.menuScreen);
+              },
+              child: SvgPicture.asset(
+                'assets/icons/dropdown.svg',
+                width: 24.w,
+                height: 24.h,
+              ),
             ),
           ],
         )

@@ -1,5 +1,7 @@
+import 'package:delivery_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HistoryCard extends StatelessWidget {
   final String imageUrl;
@@ -70,9 +72,9 @@ class HistoryCard extends StatelessWidget {
                     Text(
                       name,
                       style: TextStyle(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.textColor020202,
                       ),
                     ),
                     SizedBox(height: 4.h),
@@ -80,39 +82,55 @@ class HistoryCard extends StatelessWidget {
                       title,
                       style: TextStyle(
                         fontSize: 12.sp,
-                        color: Colors.grey,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.textColor6C6E72,
                       ),
                     ),
                     SizedBox(height: 4.h),
-                    Text(
-                      subtitle,
-                      style: TextStyle(
-                        fontSize: 12.sp,
-                        color: Colors.grey,
-                      ),
+                    Row(
+                      children: [
+                        SvgPicture.asset(
+                          'assets/icons/calendar.svg',
+                          width: 24.w,
+                          height: 24.h,
+                          color: AppColors.orangeF37B1C,
+                        ),
+                        SizedBox(width: 4.w),
+                        Text(
+                          subtitle,
+                          style: TextStyle(
+                            fontSize: 10.sp,
+                            color: AppColors.textColor6C6E72,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
               ),
             ),
 
-            /// Status Section (Completed)
+            /// Status Section (Completed or Inprogress)
             Padding(
               padding: EdgeInsets.all(8.0.w),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                    padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
                     decoration: BoxDecoration(
-                      color: index == 0 ? Colors.orange : Colors.green,
+                      color: index == 0
+                          ? const Color(0xFFFFF1DC)
+                          : const Color(0xFFEFFFD9),
                       borderRadius: BorderRadius.circular(4),
                     ),
                     child: Text(
                       index == 0 ? "Inprogress" : "Completed",
                       style: TextStyle(
                         fontSize: 10.sp,
-                        color: Colors.white,
+                        color: index == 0
+                            ? const Color(0xFFE68800)
+                            : const Color(0xFF65B902),
                       ),
                     ),
                   ),
@@ -120,6 +138,7 @@ class HistoryCard extends StatelessWidget {
                   Row(
                     children: [
                       Icon(Icons.star, color: Colors.orange, size: 16.sp),
+                      SizedBox(width: 4.w),
                       Text(
                         "4.${5 + index}",
                         style: TextStyle(
