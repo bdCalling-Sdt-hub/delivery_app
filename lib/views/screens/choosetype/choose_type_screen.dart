@@ -114,6 +114,9 @@ class ChooseTypeScreen extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     controller.selectDeliveryPerson();
+                    Future.delayed(const Duration(milliseconds: 100), () {
+                      Get.toNamed(AppRoutes.signUpScreen);
+                    });
                   },
                   child: Column(
                     children: [

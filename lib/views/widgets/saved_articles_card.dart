@@ -2,7 +2,7 @@ import 'package:delivery_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class BeginnersCard extends StatelessWidget {
+class SavedArticlesCard extends StatelessWidget {
   final String imageUrl;
   final String name;
   final String title;
@@ -10,7 +10,7 @@ class BeginnersCard extends StatelessWidget {
   final String icon;
   final VoidCallback onTap;
 
-  const BeginnersCard({
+  const SavedArticlesCard({
     required this.imageUrl,
     required this.name,
     required this.title,

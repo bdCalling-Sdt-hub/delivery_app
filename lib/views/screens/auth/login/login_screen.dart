@@ -140,8 +140,24 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   SizedBox(height: 20.h),
                   CustomGradientButton(onTap: (){
-                    Get.toNamed(AppRoutes.clientHomeScreen);
+                    showDialog(context: context, builder:(_)=>AlertDialog(
+                      title: const Text("Select Role"),
+                      content:Row(
+                        children: [
+                          TextButton(onPressed:(){
+                            Get.toNamed(AppRoutes.clientHomeScreen);
 
+                          }, child:const Text("Client")),
+
+                          TextButton(onPressed:(){
+                            Get.offAllNamed(AppRoutes.deliveryHomeScreen);
+                          }, child:const Text("Driver")),
+                        ],
+                      ),
+
+
+
+                    ));
                   }, title: 'Log In'),
                   SizedBox(height: 47.h),
                   Row(

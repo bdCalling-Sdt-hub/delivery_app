@@ -107,15 +107,19 @@ class MenuScreen extends StatelessWidget {
                         ),
                         Divider(height: 1.h, color: AppColors.backgroundColorF0F5E9),
                         _menuItem(
-                          icon: Icons.book_outlined,
-                          title: "Education",
-                          onTap: () {},
+                          icon: Icons.language,
+                          title: "Language",
+                          onTap: () {
+                            Get.toNamed(AppRoutes.languageScreen);
+                          },
                         ),
                         Divider(height: 1.h, color: AppColors.backgroundColorF0F5E9),
                         _menuItem(
                           icon: Icons.history,
                           title: "History",
-                          onTap: () {},
+                          onTap: () {
+                            Get.toNamed(AppRoutes.menuHistoryScreen);
+                          },
                         ),
                       ],
                     ),
@@ -126,7 +130,9 @@ class MenuScreen extends StatelessWidget {
                         _menuItem(
                           icon: Icons.person_outline,
                           title: "Edit Profile",
-                          onTap: () {},
+                          onTap: () {
+                            Get.toNamed(AppRoutes.editProfileScreen);
+                          },
                         ),
                         Divider(height: 1.h, color: AppColors.backgroundColorF0F5E9),
                         _menuItem(
@@ -140,13 +146,17 @@ class MenuScreen extends StatelessWidget {
                         _menuItem(
                           icon: Icons.lock_outline,
                           title: "Change Password",
-                          onTap: () {},
+                          onTap: () {
+                            Get.toNamed(AppRoutes.changePasswordScreen);
+                          },
                         ),
                         Divider(height: 1.h, color: AppColors.backgroundColorF0F5E9),
                         _menuItem(
                           icon: Icons.article_outlined,
                           title: "Saved Articles",
-                          onTap: () {},
+                          onTap: () {
+                            Get.toNamed(AppRoutes.savedArticlesScreen);
+                          },
                         ),
                       ],
                     ),
@@ -157,19 +167,25 @@ class MenuScreen extends StatelessWidget {
                         _menuItem(
                           icon: Icons.open_in_new_outlined,
                           title: "Terms of Service",
-                          onTap: () {},
+                          onTap: () {
+                            Get.toNamed(AppRoutes.termServicesScreen);
+                          },
                         ),
                         Divider(height: 1.h, color: AppColors.backgroundColorF0F5E9),
                         _menuItem(
                           icon: Icons.privacy_tip_outlined,
                           title: "Privacy Policy",
-                          onTap: () {},
+                          onTap: () {
+                            Get.toNamed(AppRoutes.privacyPolicyScreen);
+                          },
                         ),
                         Divider(height: 1.h, color: AppColors.backgroundColorF0F5E9),
                         _menuItem(
                           icon: Icons.info_outline,
                           title: "About Us",
-                          onTap: () {},
+                          onTap: () {
+                            Get.toNamed(AppRoutes.aboutUsScreen);
+                          },
                         ),
                       ],
                     ),

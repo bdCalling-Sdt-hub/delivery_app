@@ -13,9 +13,17 @@ import 'package:delivery_app/views/screens/client/clientarticles/client_articles
 import 'package:delivery_app/views/screens/client/clientarticles/tips_screen.dart';
 import 'package:delivery_app/views/screens/client/clienthome/home/client_home_screen.dart';
 import 'package:delivery_app/views/screens/client/clienthome/home/client_home_successfull_screen.dart';
+import 'package:delivery_app/views/screens/client/clienthome/menu/about_us_screen.dart';
+import 'package:delivery_app/views/screens/client/clienthome/menu/change_password.dart';
 import 'package:delivery_app/views/screens/client/clienthome/menu/faqs_screen.dart';
+import 'package:delivery_app/views/screens/client/clienthome/menu/history_screen.dart';
+import 'package:delivery_app/views/screens/client/clienthome/menu/language_screen.dart';
 import 'package:delivery_app/views/screens/client/clienthome/menu/menu_screen.dart';
+import 'package:delivery_app/views/screens/client/clienthome/menu/privacy_policy.dart';
+import 'package:delivery_app/views/screens/client/clienthome/menu/saved_articles_screen.dart';
+import 'package:delivery_app/views/screens/client/clienthome/menu/terms_services_screen.dart';
 import 'package:delivery_app/views/screens/client/clienthome/notification/notification_screen.dart';
+import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/delivery_home_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import '../views/screens/splash/splash_screen.dart';
@@ -40,6 +48,18 @@ class AppRoutes {
   static const String faqsScreen = "/FaqsScreen.dart";
   static const String myProfileScreen = "/MyProfileScreen.dart";
   static const String editProfileScreen = "/EditProfileScreen.dart";
+  static const String changePasswordScreen = "/ChangePasswordScreen.dart";
+  static const String menuHistoryScreen = "/MenuHistoryScreen.dart";
+  static const String languageScreen = "/LanguageScreen.dart";
+  static const String savedArticlesScreen = "/SavedArticlesScreen.dart";
+  static const String privacyPolicyScreen = "/PrivacyPolicyScreen.dart";
+  static const String termServicesScreen = "/TermServicesScreen.dart";
+  static const String aboutUsScreen = "/AboutUsScreen.dart";
+
+
+
+  static const String deliveryHomeScreen = "/DeliveryHomeScreen.dart";
+
 
 
   static List<GetPage> get routes => [
@@ -62,5 +82,17 @@ class AppRoutes {
     GetPage(name: faqsScreen, page: () => FaqsScreen()),
     GetPage(name: myProfileScreen, page: () => MyProfileScreen()),
     GetPage(name: editProfileScreen, page: () => EditProfileScreen()),
+    GetPage(name: changePasswordScreen, page: () => ChangePasswordScreen()),
+    GetPage(name: menuHistoryScreen, page: () => MenuHistoryScreen()),
+    GetPage(name: languageScreen, page: () => LanguageScreen()),
+    GetPage(name: savedArticlesScreen, page: () => SavedArticlesScreen()),
+    GetPage(name: privacyPolicyScreen, page: () => PrivacyPolicyScreen()),
+    GetPage(name: termServicesScreen, page: () => TermsServicesScreen()),
+    GetPage(name: aboutUsScreen, page: () => AboutUsScreen()),
+
+
+
+    GetPage(name: deliveryHomeScreen, page: () => DeliveryHomeScreen()),
+
   ];
 }
