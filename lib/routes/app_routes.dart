@@ -23,6 +23,7 @@ import 'package:delivery_app/views/screens/client/clienthome/menu/privacy_policy
 import 'package:delivery_app/views/screens/client/clienthome/menu/saved_articles_screen.dart';
 import 'package:delivery_app/views/screens/client/clienthome/menu/terms_services_screen.dart';
 import 'package:delivery_app/views/screens/client/clienthome/notification/notification_screen.dart';
+import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/delivery_home_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import '../views/screens/splash/splash_screen.dart';
@@ -56,6 +57,11 @@ class AppRoutes {
   static const String aboutUsScreen = "/AboutUsScreen.dart";
 
 
+
+  static const String deliveryHomeScreen = "/DeliveryHomeScreen.dart";
+
+
+
   static List<GetPage> get routes => [
     GetPage(name: splashScreen, page: () => SplashScreen()),
     GetPage(name: chooseTypeScreen, page: () => ChooseTypeScreen()),
@@ -83,5 +89,10 @@ class AppRoutes {
     GetPage(name: privacyPolicyScreen, page: () => PrivacyPolicyScreen()),
     GetPage(name: termServicesScreen, page: () => TermsServicesScreen()),
     GetPage(name: aboutUsScreen, page: () => AboutUsScreen()),
+
+
+
+    GetPage(name: deliveryHomeScreen, page: () => DeliveryHomeScreen()),
+
   ];
 }
