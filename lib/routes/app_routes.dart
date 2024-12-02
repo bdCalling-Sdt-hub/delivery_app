@@ -23,6 +23,8 @@ import 'package:delivery_app/views/screens/client/clienthome/menu/privacy_policy
 import 'package:delivery_app/views/screens/client/clienthome/menu/saved_articles_screen.dart';
 import 'package:delivery_app/views/screens/client/clienthome/menu/terms_services_screen.dart';
 import 'package:delivery_app/views/screens/client/clienthome/notification/notification_screen.dart';
+import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/delivery_conformation_screen.dart';
+import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/delivery_home_details_screen.dart';
 import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/delivery_home_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
@@ -59,6 +61,8 @@ class AppRoutes {
 
 
   static const String deliveryHomeScreen = "/DeliveryHomeScreen.dart";
+  static const String deliveryHomeDetailsScreen = "/DeliveryHomeDetailsScreen.dart";
+  static const String deliveryConfirmationScreen = "/DeliveryConfirmationScreen.dart";
 
 
 
@@ -93,6 +97,8 @@ class AppRoutes {
 
 
     GetPage(name: deliveryHomeScreen, page: () => DeliveryHomeScreen()),
+    GetPage(name: deliveryHomeDetailsScreen, page: () => DeliveryHomeDetailsScreen()),
+    GetPage(name: deliveryConfirmationScreen, page: () => DeliveryConformationScreen()),
 
   ];
 }

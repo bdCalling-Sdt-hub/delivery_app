@@ -333,7 +333,7 @@ class DeliveryHomeScreen extends StatelessWidget {
           CustomGradientButton(
             onTap: () {
               // Navigate to order details
-              // Get.toNamed(AppRoutes.viewOrderDetailsScreen);
+              Get.toNamed(AppRoutes.deliveryHomeDetailsScreen);
             },
             title: 'View Details',
             height: 35.h,
