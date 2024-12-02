@@ -1,17 +1,36 @@
 import 'dart:io';
+import 'package:delivery_app/controllers/profile/edit_profile_controller.dart';
 import 'package:delivery_app/routes/app_routes.dart';
 import 'package:delivery_app/views/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 import '../../../../controllers/profile/profile_controller.dart';
+import '../../../../utils/app_constants.dart';
 import '../../../../utils/app_images.dart';
 import '../../../widgets/custom_text.dart';
 import '../../../../utils/app_colors.dart';
+import '../../../widgets/custom_text_field.dart';
 
-class EditProfileScreen extends StatelessWidget {
+class EditProfileScreen extends StatefulWidget {
   EditProfileScreen({super.key});
-  final ProfileController profileController = Get.put(ProfileController());
+
+  @override
+  State<EditProfileScreen> createState() => _EditProfileScreenState();
+}
+
+class _EditProfileScreenState extends State<EditProfileScreen> {
+  final EditProfileController editProfileController = Get.put(EditProfileController());
+  TextEditingController firstNameCtrl = TextEditingController();
+  TextEditingController lastNameCtrl = TextEditingController();
+  TextEditingController emailCtrl = TextEditingController();
+  TextEditingController phoneNumberCtrl = TextEditingController();
+  TextEditingController addressCtrl = TextEditingController();
+  TextEditingController passCtrl = TextEditingController();
+  FocusNode focusNode = FocusNode();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,17 +58,45 @@ class EditProfileScreen extends StatelessWidget {
                       height: 135.h,
                       fit: BoxFit.cover,
                     ),
-
                     /// Title in Banner
-                    Positioned(
-                      bottom: 16.h,
-                      child: CustomText(
-                        text: "Edit Profile",
-                        fontsize: 20.sp,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                    /// Background Image
+                    Container(
+                      color: AppColors.primaryColor,
+                      width: MediaQuery.of(context).size.width,
+                      height: 100.h,
+                    ),
+                    /// Header Content
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
+                      child: Row(
+                        children: [
+                          /// Back Button Icon
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: SvgPicture.asset(
+                              'assets/icons/lessthan.svg',
+                              height: 18.h,
+                              width: 18.w,
+                              color: Colors.white,
+                            ),
+                          ),
+                          /// Title
+                          Expanded(
+                            child: Center(
+                              child: CustomText(
+                                text: "Edit Profile",
+                                fontsize: 20.sp,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
+
                   ],
                 ),
                 SizedBox(height: 17.h),
@@ -71,13 +118,13 @@ class EditProfileScreen extends StatelessWidget {
                               height: 80.h,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                image: profileController.selectedImagePath.value.isEmpty
+                                image: editProfileController.selectedImagePath.value.isEmpty
                                     ? const DecorationImage(
                                   image: AssetImage(AppImages.profileImage),
                                   fit: BoxFit.cover,
                                 )
                                     : DecorationImage(
-                                  image: FileImage(File(profileController.selectedImagePath.value)),
+                                  image: FileImage(File(editProfileController.selectedImagePath.value)),
                                   fit: BoxFit.cover,
                                 ),
                                 border: Border.all(
@@ -111,27 +158,168 @@ class EditProfileScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 8.h),
-
-
-
                     ],
                   ),
                 ),
-                SizedBox(height: 20.h),
-                /// ==============================> Account Overview Section ============================>
 
-                SizedBox(height: 65.h),
-                /// ==============================> Edit Profile Button ============================>
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w),
-                  child: CustomGradientButton(
-                      onTap: (){
-                        Get.toNamed(AppRoutes.splashScreen);
-                      },
-                      title: 'Save'),
+                  padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 20.w),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      /// ====================================> First Name ==================================>
+                      CustomText(
+                        text: 'First Name',
+                        fontsize: 14.sp,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.textColor333333,
+                      ),
+                      SizedBox(height: 11.h),
+                      CustomTextField(
+                        controller: firstNameCtrl,
+                        hintText: 'Enter first name',
+                        prefixIcon: 'assets/icons/user-line.svg',
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Please enter your name";
+                          }
+                          return null;
+                        },
+                        contenpaddingHorizontal: 50.w,
+                        contenpaddingVertical: 16.h,
+
+
+                      ),
+                      SizedBox(height: 20.h),
+                      /// ====================================> Last Name ==================================>
+                      CustomText(
+                        text: 'Last Name',
+                        fontsize: 14.sp,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.textColor333333,
+                      ),
+                      SizedBox(height: 11.h),
+                      CustomTextField(
+                        controller: lastNameCtrl,
+                        hintText: 'Enter last name',
+                        prefixIcon: 'assets/icons/user-line.svg',
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Please enter your name";
+                          }
+                          return null;
+                        },
+                        contenpaddingHorizontal: 50.w,
+                        contenpaddingVertical: 16.h,
+                      ),
+                      SizedBox(height: 20.h),
+                      /// =====================================> Email ===================================>
+                      CustomText(
+                        text: 'Email Address',
+                        fontsize: 14.sp,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.textColor333333,
+                      ),
+                      SizedBox(height: 11.h),
+                      CustomTextField(
+                        controller: emailCtrl,
+                        hintText: 'Enter your email address',
+                        prefixIcon: 'assets/icons/mail.svg',
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Please enter your user email";
+                          } else if (!AppConstants.emailValidator.hasMatch(value)) {
+                            return "Invalid email!";
+                          }
+                          return null;
+                        },
+                        contenpaddingHorizontal: 20.w,
+                        contenpaddingVertical: 18.h,
+                      ),
+                      SizedBox(height: 20.h),
+                      /// =====================================> Password ===================================>
+                      CustomText(
+                        text: 'Password',
+                        fontsize: 14.sp,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.textColor333333,
+                      ),
+                      SizedBox(height: 11.h),
+                      CustomTextField(
+                        controller: passCtrl,
+                        hintText: 'Enter your password',
+                        prefixIcon: 'assets/icons/lock.svg',
+                        isObscureText: true,
+                        isPassword: true,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Please enter your password";
+                          }
+                          return null;
+                        },
+                        contenpaddingHorizontal: 20.w,
+                        contenpaddingVertical: 18.h,
+                      ),
+                      SizedBox(height: 20.h),
+                      /// =====================================> Phone Number ===================================>
+                      CustomText(
+                        text: 'Phone Number',
+                        fontsize: 14.sp,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.textColor333333,
+                      ),
+                      SizedBox(height: 11.h),
+                      IntlPhoneField(
+                        focusNode: focusNode,
+                        decoration:  const InputDecoration(
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(color: AppColors.textColorEDEDEE),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: AppColors.textColorEDEDEE)
+                            )
+                        ),
+                        initialCountryCode: 'US',
+                        onChanged: (phone) {
+                          // if(phone.number.isNotEmpty){
+                          //   isPhoneEmpty.value = false;
+                          // }
+                          phoneNumberCtrl.text = phone.completeNumber;
+
+                        },
+                      ),
+                      SizedBox(height: 20.h),
+                      /// =====================================> Address ===================================>
+                      CustomText(
+                        text: 'Address',
+                        fontsize: 14.sp,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.textColor333333,
+                      ),
+                      SizedBox(height: 11.h),
+                      CustomTextField(
+                        controller: addressCtrl,
+                        hintText: 'Enter address',
+                        prefixIcon: 'assets/icons/location.svg',
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Please select your location";
+                          }
+                          return null;
+                        },
+                        contenpaddingHorizontal: 50.w,
+                        contenpaddingVertical: 16.h,
+                      ),
+                      SizedBox(height: 27.h),
+                      CustomGradientButton(onTap: (){
+                        Get.toNamed(AppRoutes.verifyEmailAddressScreen);
+
+                      }, title: 'Save'),
+                      SizedBox(height: 24.h),
+                    ],
+                  ),
                 ),
-                SizedBox(height: 24.h),
+                SizedBox(height: 27.h),
 
               ],
             ),
@@ -141,64 +329,6 @@ class EditProfileScreen extends StatelessWidget {
     );
   }
 
-  /// ============================> Helper Widget for Info Cards ==============================>
-  Widget _infoCard({
-    required IconData icon,
-    required String title,
-    required String subtitle,
-  }) {
-    return Container(
-      margin: EdgeInsets.only(bottom: 12.h),
-      padding: EdgeInsets.all(12.w),
-      decoration: BoxDecoration(
-        color: const Color(0xFFF0F5E9),
-        borderRadius: BorderRadius.circular(8.r),
-      ),
-      child: Row(
-        children: [
-          /// Icon
-          Container(
-            width: 40.w,
-            height: 40.h,
-            decoration: const BoxDecoration(
-              color: AppColors.textColorFFFFFF,
-              shape: BoxShape.circle,
-            ),
-            child: Icon(
-              icon,
-              color: AppColors.primaryColor,
-              size: 20.sp,
-            ),
-          ),
-          SizedBox(width: 12.w),
-
-          /// Title and Subtitle
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CustomText(
-                text: title,
-                fontsize: 14.sp,
-                fontWeight: FontWeight.w600,
-                color: AppColors.textColor333333,
-              ),
-              SizedBox(height: 4.h),
-              CustomText(
-                text: subtitle,
-                fontsize: 14.sp,
-                fontWeight: FontWeight.w400,
-                color: AppColors.textColor6C6E72,
-                textAlign: TextAlign.left,
-                maxline: 5,
-                textOverflow: TextOverflow.ellipsis,
-              ),
-
-            ],
-          ),
-        ],
-      ),
-    );
-  }
   /// Show Options for Gallery or Camera
   void _showImagePickerOptions(BuildContext context) {
     Get.bottomSheet(
@@ -215,7 +345,7 @@ class EditProfileScreen extends StatelessWidget {
               leading: const Icon(Icons.photo_library),
               title: Text("Pick from Gallery"),
               onTap: () {
-                profileController.pickImageFromGallery();
+                editProfileController.pickImageFromGallery();
                 Get.back();
               },
             ),
@@ -223,7 +353,7 @@ class EditProfileScreen extends StatelessWidget {
               leading: Icon(Icons.camera_alt),
               title: Text("Capture with Camera"),
               onTap: () {
-                profileController.captureImageFromCamera();
+                editProfileController.captureImageFromCamera();
                 Get.back();
               },
             ),

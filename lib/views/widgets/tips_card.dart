@@ -53,7 +53,7 @@ class TipsCard extends StatelessWidget {
               child: Image.asset(
                 imageUrl,
                 width: double.infinity,
-                height: 100.h,
+                height: 125.h,
                 fit: BoxFit.cover,
               ),
             ),
