@@ -23,9 +23,11 @@ import 'package:delivery_app/views/screens/client/clienthome/menu/privacy_policy
 import 'package:delivery_app/views/screens/client/clienthome/menu/saved_articles_screen.dart';
 import 'package:delivery_app/views/screens/client/clienthome/menu/terms_services_screen.dart';
 import 'package:delivery_app/views/screens/client/clienthome/notification/notification_screen.dart';
+import 'package:delivery_app/views/screens/deliverypersons/deliverybottomnavbar/delivery_history.dart';
 import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/delivery_conformation_screen.dart';
 import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/delivery_home_details_screen.dart';
 import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/delivery_home_screen.dart';
+import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/summarize_today_activity.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import '../views/screens/splash/splash_screen.dart';
@@ -63,6 +65,8 @@ class AppRoutes {
   static const String deliveryHomeScreen = "/DeliveryHomeScreen.dart";
   static const String deliveryHomeDetailsScreen = "/DeliveryHomeDetailsScreen.dart";
   static const String deliveryConfirmationScreen = "/DeliveryConfirmationScreen.dart";
+  static const String summarizeTodayActivityScreen = "/SummarizeTodayActivityScreen.dart";
+  static const String deliveryHistoryScreen = "/DeliveryHistoryScreen.dart";
 
 
 
@@ -98,7 +102,9 @@ class AppRoutes {
 
     GetPage(name: deliveryHomeScreen, page: () => DeliveryHomeScreen()),
     GetPage(name: deliveryHomeDetailsScreen, page: () => DeliveryHomeDetailsScreen()),
-    GetPage(name: deliveryConfirmationScreen, page: () => DeliveryConformationScreen()),
+    GetPage(name: deliveryConfirmationScreen, page: () => DeliveryConfirmationScreen()),
+    GetPage(name: summarizeTodayActivityScreen, page: () => SummarizeTodayActivity()),
+    GetPage(name: deliveryHistoryScreen, page: () => DeliveryHistoryScreen()),
 
   ];
 }

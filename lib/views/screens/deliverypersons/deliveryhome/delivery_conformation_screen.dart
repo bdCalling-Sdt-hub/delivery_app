@@ -1,63 +1,65 @@
+import 'dart:io';
+
+import 'package:delivery_app/utils/app_colors.dart';
 import 'package:delivery_app/views/widgets/custom_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_images.dart';
 import '../../../widgets/custom_text.dart';
 
-class DeliveryConformationScreen extends StatefulWidget {
-  const DeliveryConformationScreen({super.key});
+class DeliveryConfirmationScreen extends StatefulWidget {
+  const DeliveryConfirmationScreen({super.key});
 
   @override
-  State<DeliveryConformationScreen> createState() => _DeliveryConformationScreenState();
+  State<DeliveryConfirmationScreen> createState() =>
+      _DeliveryConfirmationScreenState();
 }
 
-class _DeliveryConformationScreenState extends State<DeliveryConformationScreen> {
+class _DeliveryConfirmationScreenState
+    extends State<DeliveryConfirmationScreen> {
 
   final TextEditingController bucketController = TextEditingController();
-  String? selectedStatus; // To track selected dropdown value
-
-  // List of statuses
+  String? selectedStatus;
+  File? _imageFile;
   final List<String> statuses = ['Delivered', 'Not Delivered', 'Problem Occurred'];
 
-  // Image Picker Function
+  /// ==============================> Function to show image picker options ===============================>
   Future<void> _pickImage(BuildContext context) async {
     final picker = ImagePicker();
     showModalBottomSheet(
       context: context,
-      builder: (BuildContext ctx) {
+      builder: (_) {
         return SafeArea(
           child: Wrap(
             children: [
               ListTile(
                 leading: const Icon(Icons.camera_alt),
-                title: const Text('Take a Photo'),
+                title: const Text("Take a Photo"),
                 onTap: () async {
-                  final pickedFile = await picker.pickImage(
-                    source: ImageSource.camera,
-                  );
-                  Navigator.pop(ctx); // Close bottom sheet
+                  Navigator.pop(context);
+                  final pickedFile =
+                  await picker.pickImage(source: ImageSource.camera);
                   if (pickedFile != null) {
-                    // Handle image selection
-                    print('Image selected: ${pickedFile.path}');
+                    setState(() {
+                      _imageFile = File(pickedFile.path);
+                    });
                   }
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.photo),
-                title: const Text('Choose from Gallery'),
+                leading: const Icon(Icons.photo_library),
+                title: const Text("Choose from Gallery"),
                 onTap: () async {
-                  final pickedFile = await picker.pickImage(
-                    source: ImageSource.gallery,
-                  );
-                  Navigator.pop(ctx); // Close bottom sheet
+                  Navigator.pop(context);
+                  final pickedFile =
+                  await picker.pickImage(source: ImageSource.gallery);
                   if (pickedFile != null) {
-                    // Handle image selection
-                    print('Image selected: ${pickedFile.path}');
+                    setState(() {
+                      _imageFile = File(pickedFile.path);
+                    });
                   }
                 },
               ),
@@ -67,6 +69,7 @@ class _DeliveryConformationScreenState extends State<DeliveryConformationScreen>
       },
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,8 +86,7 @@ class _DeliveryConformationScreenState extends State<DeliveryConformationScreen>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-
-                /// ==============================> Header Section ============================>
+                /// ======================================>  Header Section ===============================>
                 Stack(
                   alignment: Alignment.bottomCenter,
                   children: [
@@ -146,58 +148,56 @@ class _DeliveryConformationScreenState extends State<DeliveryConformationScreen>
 
                   ],
                 ),
-                SizedBox(height: 17.h),
+                SizedBox(height: 20.h),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomText(
-                        text: "No. of Bucket Delivered",
-                        fontsize: 14.sp,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.textColor6C6E72,
+                      /// No. of Bucket Delivered Input
+                      Text(
+                        "No. of Bucket Delivered",
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: const Color(0xFF333333),
+                        ),
                       ),
-                      SizedBox(height: 8.h),
+                      SizedBox(height: 10.h),
                       TextField(
                         controller: bucketController,
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
-                          hintText: 'Enter number of bucket',
+                          hintText: 'Enter number of buckets',
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8.r),
-                            borderSide: const BorderSide(color: AppColors.textColor6C6E72),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8.r),
-                            borderSide: const BorderSide(color: AppColors.primaryColor),
+                            borderSide:
+                            const BorderSide(color: Color(0xFFEDEDED)),
                           ),
                           contentPadding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 12.h,
-                          ),
+                              horizontal: 16.w, vertical: 12.h),
                         ),
                       ),
-                      SizedBox(height: 16.h),
+                      SizedBox(height: 20.h),
 
-                      /// Input: Status Dropdown
-                      CustomText(
-                        text: "Status",
-                        fontsize: 14.sp,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.textColor6C6E72,
+                      /// Status Dropdown
+                      Text(
+                        "Status",
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: const Color(0xFF333333),
+                        ),
                       ),
-                      SizedBox(height: 8.h),
+                      SizedBox(height: 10.h),
                       DropdownButtonFormField<String>(
                         value: selectedStatus,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8.r),
-                            borderSide: const BorderSide(color: AppColors.textColor6C6E72),
                           ),
                           contentPadding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 12.h,
-                          ),
+                              horizontal: 16.w, vertical: 12.h),
                         ),
                         hint: const Text("Select status"),
                         items: statuses.map((String status) {
@@ -212,56 +212,65 @@ class _DeliveryConformationScreenState extends State<DeliveryConformationScreen>
                           });
                         },
                       ),
-                      SizedBox(height: 16.h),
+                      SizedBox(height: 20.h),
 
                       /// Take a Photo Section
-                      CustomText(
-                        text: "Take a Photo",
-                        textAlign: TextAlign.start,
-                        fontsize: 14.sp,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.textColor6C6E72,
+                      Text(
+                        "Take a Photo",
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: const Color(0xFF333333),
+                        ),
                       ),
-                      SizedBox(height: 8.h),
+                      SizedBox(height: 10.h),
                       GestureDetector(
                         onTap: () => _pickImage(context),
                         child: Container(
-                          height: 60.h,
+                          height: 150.h,
+                          width: double.infinity,
                           decoration: BoxDecoration(
-                            border: Border.all(color: AppColors.textColor6C6E72),
+                            border: Border.all(color: const Color(0xFFF37B1C)),
                             borderRadius: BorderRadius.circular(8.r),
-                            color: const Color(0xFFFFF8F2),
+                            color: const Color(0xFFFAC9A2),
+                            image: _imageFile != null
+                                ? DecorationImage(
+                              image: FileImage(_imageFile!),
+                              fit: BoxFit.cover,
+                            )
+                                : null,
                           ),
-                          child: Row(
+                          child: _imageFile == null
+                              ? Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               SvgPicture.asset(
                                 'assets/icons/camera.svg',
-                                color: AppColors.primaryColor,
+                                color: const Color(0xFFF37B1C),
                               ),
-                              SizedBox(width: 8.w),
+                              SizedBox(height: 8.h),
                               Text(
-                                "Take a Photo Click here",
+                                "Take a Photo or Click here",
                                 style: TextStyle(
-                                  color: AppColors.primaryColor,
+                                  color: const Color(0xFF333333),
                                   fontSize: 14.sp,
                                 ),
                               ),
                             ],
-                          ),
+                          )
+                              : null,
                         ),
                       ),
                     ],
                   ),
                 ),
-              
-                SizedBox(height: 27.h),
+                SizedBox(height: 30.h),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
-                  child: CustomGradientButton(onTap: (){}, title: 'Submit'),
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  child: CustomGradientButton(
+                      onTap: (){},
+                      title: 'Submit'),
                 )
-
-
               ],
             ),
           ),

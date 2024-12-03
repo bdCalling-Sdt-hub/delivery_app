@@ -59,8 +59,8 @@ class _DeliveryBottomNavBarState extends State<DeliveryBottomNavBar> {
     final theme = Theme.of(context);
     List<BottomNavigationBarItem> menuItems = [
       getItem(AppIcons.homeIcon, 'Home', theme, 0),
-      getItem(AppIcons.articlesIcon, 'Articles', theme, 1),
-      getItem(AppIcons.historyIcon, 'History', theme, 2),
+      getItem(AppIcons.historyIcon, 'History', theme, 1),
+      getItem(AppIcons.articlesIcon, 'Timing', theme, 2),
       getItem(AppIcons.profileIcon, 'Profile', theme, 3),
     ];
 
@@ -95,7 +95,7 @@ class _DeliveryBottomNavBarState extends State<DeliveryBottomNavBar> {
                 Get.offAndToNamed(AppRoutes.deliveryHomeScreen);
                 break;
               case 1:
-                // Get.offAndToNamed(AppRoutes.clientArticleScreen);
+                Get.offAndToNamed(AppRoutes.deliveryHistoryScreen);
                 break;
               case 2:
                 // Get.offAndToNamed(AppRoutes.historyScreen);
