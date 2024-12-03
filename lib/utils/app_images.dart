@@ -24,6 +24,8 @@ class AppImages {
   static const String packageImage = '$path/packageimage.png';
   static const String comImage = '$path/com.png';
   static const String dImage = '$path/dhistory.png';
+  static const String orderImage = '$path/order.png';
+  static const String timeImage = '$path/time.png';
 
 
 }

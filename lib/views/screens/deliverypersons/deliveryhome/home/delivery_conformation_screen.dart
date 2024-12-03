@@ -7,8 +7,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../../../utils/app_images.dart';
-import '../../../widgets/custom_text.dart';
+import '../../../../../utils/app_images.dart';
+import '../../../../widgets/custom_text.dart';
 
 class DeliveryConfirmationScreen extends StatefulWidget {
   const DeliveryConfirmationScreen({super.key});

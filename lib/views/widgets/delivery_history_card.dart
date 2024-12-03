@@ -1,3 +1,4 @@
+import 'package:delivery_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -36,8 +37,8 @@ class DeliveryHistoryCard extends StatelessWidget {
             child: Container(
               width: 48.w,
               height: 48.h,
-              decoration: BoxDecoration(
-                color: const Color(0xFFFEF2E8),
+              decoration: const BoxDecoration(
+                color: Color(0xFFFEF2E8),
                 shape: BoxShape.circle,
               ),
               child: Center(
@@ -88,10 +89,10 @@ class DeliveryHistoryCard extends StatelessWidget {
             child: ElevatedButton(
               onPressed: onTap,
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF65B902),
-                minimumSize: Size(80.w, 32.h),
+                backgroundColor: AppColors.primaryColor,
+                minimumSize: Size(64.w, 30.h),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(6.r),
+                  borderRadius: BorderRadius.circular(5.r),
                 ),
               ),
               child: Text(

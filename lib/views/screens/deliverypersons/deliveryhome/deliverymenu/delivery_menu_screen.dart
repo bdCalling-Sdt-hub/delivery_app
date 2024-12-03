@@ -7,8 +7,8 @@ import 'package:get/get.dart';
 
 import '../../../../../utils/app_colors.dart';
 
-class MenuScreen extends StatelessWidget {
-  const MenuScreen({super.key});
+class DeliveryMenuScreen extends StatelessWidget {
+  const DeliveryMenuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -99,10 +99,10 @@ class MenuScreen extends StatelessWidget {
                     _menuSection(
                       [
                         _menuItem(
-                          icon: Icons.help_outline,
-                          title: "FAQ’s",
+                          icon: Icons.access_time_sharp,
+                          title: "Timing",
                           onTap: () {
-                            Get.toNamed(AppRoutes.faqsScreen);
+                            // Get.toNamed(AppRoutes.faqsScreen);
                           },
                         ),
                         Divider(height: 1.h, color: AppColors.backgroundColorF0F5E9),
@@ -110,7 +110,7 @@ class MenuScreen extends StatelessWidget {
                           icon: Icons.language,
                           title: "Language",
                           onTap: () {
-                            Get.toNamed(AppRoutes.languageScreen);
+                            Get.toNamed(AppRoutes.deliveryLanguageScreen);
                           },
                         ),
                         Divider(height: 1.h, color: AppColors.backgroundColorF0F5E9),
@@ -118,7 +118,7 @@ class MenuScreen extends StatelessWidget {
                           icon: Icons.history,
                           title: "History",
                           onTap: () {
-                            Get.toNamed(AppRoutes.menuHistoryScreen);
+                            Get.toNamed(AppRoutes.deliveryHistorysScreen);
                           },
                         ),
                       ],
@@ -148,14 +148,6 @@ class MenuScreen extends StatelessWidget {
                           title: "Change Password",
                           onTap: () {
                             Get.toNamed(AppRoutes.changePasswordScreen);
-                          },
-                        ),
-                        Divider(height: 1.h, color: AppColors.backgroundColorF0F5E9),
-                        _menuItem(
-                          icon: Icons.article_outlined,
-                          title: "Saved Articles",
-                          onTap: () {
-                            Get.toNamed(AppRoutes.savedArticlesScreen);
                           },
                         ),
                       ],

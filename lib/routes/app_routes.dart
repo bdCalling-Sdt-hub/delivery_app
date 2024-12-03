@@ -24,12 +24,21 @@ import 'package:delivery_app/views/screens/client/clienthome/menu/saved_articles
 import 'package:delivery_app/views/screens/client/clienthome/menu/terms_services_screen.dart';
 import 'package:delivery_app/views/screens/client/clienthome/notification/notification_screen.dart';
 import 'package:delivery_app/views/screens/deliverypersons/deliverybottomnavbar/delivery_history.dart';
-import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/delivery_conformation_screen.dart';
-import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/delivery_home_details_screen.dart';
-import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/delivery_home_screen.dart';
-import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/summarize_today_activity.dart';
+import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/deliverymenu/delivery_history_screen.dart';
+import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/deliverymenu/delivery_language_screen.dart';
+import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/deliverymenu/delivery_menu_screen.dart';
+import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/home/activity_summary.dart';
+import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/home/delivery_conformation_screen.dart';
+import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/home/delivery_home_details_screen.dart';
+import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/home/delivery_home_screen.dart';
+import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/home/orders_screen.dart';
+import 'package:delivery_app/views/screens/deliverypersons/deliveryhome/home/summarize_today_activity.dart';
+import 'package:delivery_app/views/screens/deliverypersons/deliverynotification/delivery_notification_screen.dart';
+import 'package:delivery_app/views/screens/deliverypersons/timing/timing_screen.dart';
+import 'package:get/get.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
+import '../views/screens/deliverypersons/deliveryprofile/delivery_my_profile_screen.dart';
 import '../views/screens/splash/splash_screen.dart';
 
 class AppRoutes {
@@ -67,6 +76,14 @@ class AppRoutes {
   static const String deliveryConfirmationScreen = "/DeliveryConfirmationScreen.dart";
   static const String summarizeTodayActivityScreen = "/SummarizeTodayActivityScreen.dart";
   static const String deliveryHistoryScreen = "/DeliveryHistoryScreen.dart";
+  static const String activitySummaryScreen = "/ActivitySummaryScreen.dart";
+  static const String ordersScreen = "/OrdersScreen.dart";
+  static const String deliveryMenuScreen = "/DeliveryMenuScreen.dart";
+  static const String deliveryNotificationScreen = "/DeliveryNotificationScreen.dart";
+  static const String deliveryLanguageScreen = "/DeliveryLanguageScreen.dart";
+  static const String deliveryHistorysScreen = "/DeliveryHistorysScreen.dart";
+  static const String deliveryMyProfileScreen = "/DeliveryMyProfileScreen.dart";
+  static const String timingScreen = "/TimingScreen.dart";
 
 
 
@@ -77,18 +94,18 @@ class AppRoutes {
     GetPage(name: verifyEmailAddressScreen, page: () => VerifyEmailAddressScreen()),
     GetPage(name: loginScreen, page: () => LoginScreen()),
     GetPage(name: forgotPasswordScreen, page: () => ForgotPasswordScreen()),
-    GetPage(name: clientHomeScreen, page: () => ClientHomeScreen()),
+    GetPage(name: clientHomeScreen, page: () => ClientHomeScreen(),transition: Transition.noTransition),
     GetPage(name: clientHomeScreenSuccessfulScreen, page: () => ClientHomeScreenSuccessfulScreen()),
-    GetPage(name: clientArticleScreen, page: () => ClientArticleScreen()),
+    GetPage(name: clientArticleScreen, page: () => ClientArticleScreen(),transition: Transition.noTransition),
     GetPage(name: beginnersScreen, page: () => BeginnersScreen()),
     GetPage(name: advancedScreen, page: () => AdvancedScreen()),
     GetPage(name: tipsScreen, page: () => TipsScreen()),
     GetPage(name: articleDetailsScreen, page: () => ArticleDetailsScreen()),
-    GetPage(name: historyScreen, page: () => HistoryScreen()),
+    GetPage(name: historyScreen, page: () => HistoryScreen(),transition: Transition.noTransition),
     GetPage(name: menuScreen, page: () => MenuScreen()),
     GetPage(name: notificationScreen, page: () => NotificationScreen()),
     GetPage(name: faqsScreen, page: () => FaqsScreen()),
-    GetPage(name: myProfileScreen, page: () => MyProfileScreen()),
+    GetPage(name: myProfileScreen, page: () => MyProfileScreen(),transition: Transition.noTransition),
     GetPage(name: editProfileScreen, page: () => EditProfileScreen()),
     GetPage(name: changePasswordScreen, page: () => ChangePasswordScreen()),
     GetPage(name: menuHistoryScreen, page: () => MenuHistoryScreen()),
@@ -100,11 +117,19 @@ class AppRoutes {
 
 
 
-    GetPage(name: deliveryHomeScreen, page: () => DeliveryHomeScreen()),
+    GetPage(name: deliveryHomeScreen, page: () => DeliveryHomeScreen(),transition: Transition.noTransition),
     GetPage(name: deliveryHomeDetailsScreen, page: () => DeliveryHomeDetailsScreen()),
     GetPage(name: deliveryConfirmationScreen, page: () => DeliveryConfirmationScreen()),
     GetPage(name: summarizeTodayActivityScreen, page: () => SummarizeTodayActivity()),
-    GetPage(name: deliveryHistoryScreen, page: () => DeliveryHistoryScreen()),
+    GetPage(name: deliveryHistoryScreen, page: () => DeliveryHistoryScreen(),transition: Transition.noTransition),
+    GetPage(name: activitySummaryScreen, page: () => ActivitySummaryScreen()),
+    GetPage(name: ordersScreen, page: () => OrdersScreen()),
+    GetPage(name: deliveryMenuScreen, page: () => DeliveryMenuScreen()),
+    GetPage(name: deliveryNotificationScreen, page: () => DeliveryNotificationScreen()),
+    GetPage(name: deliveryLanguageScreen, page: () => DeliveryLanguageScreen()),
+    GetPage(name: deliveryHistorysScreen, page: () => DeliveryHistorysScreen()),
+    GetPage(name: deliveryMyProfileScreen, page: () => DeliveryMyProfileScreen(),transition: Transition.noTransition),
+    GetPage(name: timingScreen, page: () => TimingScreen(),transition: Transition.noTransition),
 
   ];
 }
