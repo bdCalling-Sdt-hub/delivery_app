@@ -51,7 +51,7 @@ class DeliveryHomeScreen extends StatelessWidget {
                   SizedBox(height: 24.h),
                   CustomGradientButton(
                     onTap: () {
-                      Get.toNamed(AppRoutes.clientHomeScreenSuccessfulScreen);
+                      Get.toNamed(AppRoutes.summarizeTodayActivityScreen);
                     },
                     title: 'Summarize Today Activity',
                   ),
