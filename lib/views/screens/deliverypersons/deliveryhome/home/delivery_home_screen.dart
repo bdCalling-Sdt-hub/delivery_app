@@ -103,7 +103,7 @@ class DeliveryHomeScreen extends StatelessWidget {
             SizedBox(width: 14.w),
             GestureDetector(
               onTap: () {
-                // Get.toNamed(AppRoutes.menuScreen);
+                Get.toNamed(AppRoutes.deliveryMenuScreen);
               },
               child: Container(
                 width: 42.w,
@@ -133,7 +133,7 @@ class DeliveryHomeScreen extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            // Get.toNamed(AppRoutes.notificationScreen);
+            Get.toNamed(AppRoutes.deliveryNotificationScreen);
           },
           child: Container(
             width: 42.w,

@@ -58,10 +58,10 @@ class _DeliveryBottomNavBarState extends State<DeliveryBottomNavBar> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     List<BottomNavigationBarItem> menuItems = [
-      getItem(AppIcons.homeIcon, 'Home', theme, 0),
-      getItem(AppIcons.historyIcon, 'History', theme, 1),
-      getItem(AppIcons.articlesIcon, 'Timing', theme, 2),
-      getItem(AppIcons.profileIcon, 'Profile', theme, 3),
+      getItem('assets/icons/home.svg', 'Home', theme, 0),
+      getItem('assets/icons/history.svg', 'History', theme, 1),
+      getItem('assets/icons/timing.svg', 'Timing', theme, 2),
+      getItem('assets/icons/profile.svg', 'Profile', theme, 3),
     ];
 
     return Column(
@@ -98,10 +98,10 @@ class _DeliveryBottomNavBarState extends State<DeliveryBottomNavBar> {
                 Get.offAndToNamed(AppRoutes.deliveryHistoryScreen);
                 break;
               case 2:
-                // Get.offAndToNamed(AppRoutes.historyScreen);
+                Get.offAndToNamed(AppRoutes.timingScreen);
                 break;
               case 3:
-                // Get.offAndToNamed(AppRoutes.myProfileScreen);
+                Get.offAndToNamed(AppRoutes.deliveryMyProfileScreen);
                 break;
             }
           },

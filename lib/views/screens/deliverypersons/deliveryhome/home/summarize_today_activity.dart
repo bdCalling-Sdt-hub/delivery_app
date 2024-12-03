@@ -1,11 +1,13 @@
+import 'package:delivery_app/routes/app_routes.dart';
 import 'package:delivery_app/views/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
-import '../../../../utils/app_colors.dart';
-import '../../../../utils/app_images.dart';
-import '../../../widgets/custom_text.dart';
+import '../../../../../utils/app_colors.dart';
+import '../../../../../utils/app_images.dart';
+import '../../../../widgets/custom_text.dart';
 
 class SummarizeTodayActivity extends StatelessWidget {
   const SummarizeTodayActivity({super.key});
@@ -245,7 +247,9 @@ class SummarizeTodayActivity extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: CustomGradientButton(
-                      onTap: (){}, title: "Submit"),
+                      onTap: (){
+                        Get.toNamed(AppRoutes.activitySummaryScreen);
+                      }, title: "Submit"),
                 ),
 
 

@@ -59,10 +59,10 @@ class _ClientBottomNavBarState extends State<ClientBottomNavBar> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     List<BottomNavigationBarItem> menuItems = [
-      getItem(AppIcons.homeIcon, 'Home', theme, 0),
-      getItem(AppIcons.articlesIcon, 'Articles', theme, 1),
-      getItem(AppIcons.historyIcon, 'History', theme, 2),
-      getItem(AppIcons.profileIcon, 'Profile', theme, 3),
+      getItem('assets/icons/home.svg', 'Home', theme, 0),
+      getItem('assets/icons/articles.svg', 'Articles', theme, 1),
+      getItem('assets/icons/history.svg', 'History', theme, 2),
+      getItem('assets/icons/profile.svg', 'Profile', theme, 3),
     ];
 
     return Column(

@@ -5,8 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:get/get.dart';
 
-import '../../../../controllers/delivery/delivery_controller.dart';
-import '../../../widgets/custom_button.dart';
+import '../../../../../controllers/delivery/delivery_controller.dart';
+import '../../../../widgets/custom_button.dart';
 
 class DeliveryHomeDetailsScreen extends StatelessWidget {
   DeliveryHomeDetailsScreen({Key? key}) : super(key: key);
