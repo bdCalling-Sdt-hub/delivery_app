@@ -69,7 +69,7 @@ class ActivitySummaryScreen extends StatelessWidget {
                           Expanded(
                             child: Center(
                               child: CustomText(
-                                text: "Activity Summary",
+                                text: "Activity Summary".tr,
                                 fontsize: 20.sp,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -117,7 +117,7 @@ class ActivitySummaryScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 CustomText(
-                                  text: "Completed Deliveries",
+                                  text: "Completed Deliveries".tr,
                                   fontsize: 16.sp,
                                   fontWeight: FontWeight.w500,
                                   color: const Color(0xFF333333),
@@ -125,7 +125,7 @@ class ActivitySummaryScreen extends StatelessWidget {
                                 SizedBox(height: 4.h),
                                 /// Number
                                 CustomText(
-                                  text: "120",
+                                  text: "120".tr,
                                   fontsize: 20.sp,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.primaryColor,
@@ -183,7 +183,7 @@ class ActivitySummaryScreen extends StatelessWidget {
 
                                 /// Text
                                 CustomText(
-                                  text: "Problem Encountered",
+                                  text: "Problem Encountered".tr,
                                   fontsize: 16.sp,
                                   fontWeight: FontWeight.w500,
                                   color: const Color(0xFF333333),
@@ -193,7 +193,7 @@ class ActivitySummaryScreen extends StatelessWidget {
 
                             /// Number
                             CustomText(
-                              text: "120",
+                              text: "120".tr,
                               fontsize: 20.sp,
                               fontWeight: FontWeight.bold,
                               color: AppColors.primaryColor,
@@ -204,14 +204,14 @@ class ActivitySummaryScreen extends StatelessWidget {
 
                         /// List of problems
                         CustomText(
-                          text: "1. Lorem ipsum dolor sit amet consectetur.",
+                          text: "1. Lorem ipsum dolor sit amet consectetur.".tr,
                           fontsize: 14.sp,
                           fontWeight: FontWeight.w400,
                           color: const Color(0xFF333333),
                         ),
                         SizedBox(height: 4.h),
                         CustomText(
-                          text: "2. Lorem ipsum dolor sit amet consectetur.",
+                          text: "2. Lorem ipsum dolor sit amet consectetur.".tr,
                           fontsize: 14.sp,
                           fontWeight: FontWeight.w400,
                           color: const Color(0xFF333333),
@@ -229,14 +229,14 @@ class ActivitySummaryScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomText(
-                        text: "General Comment on the Way",
+                        text: "General Comment on the Way".tr,
                         fontsize: 16.sp,
                         fontWeight: FontWeight.w500,
                         color: const Color(0xFF333333),
                       ),
                       SizedBox(height: 10.h),
                       CustomText(
-                        text: "Lorem ipsum dolor sit amet consectetur. Consectetur pharetra nullam purus sed in arcu. Turpis non lectus fames congue interdum in nibh nulla. Massa non cursus donec duis.ehicula.",
+                        text: "Lorem ipsum dolor sit amet consectetur. Consectetur pharetra nullam purus sed in arcu. Turpis non lectus fames congue interdum in nibh nulla. Massa non cursus donec duis.ehicula.".tr,
                         fontsize: 14.sp,
                         fontWeight: FontWeight.w400,
                         maxline: 5,

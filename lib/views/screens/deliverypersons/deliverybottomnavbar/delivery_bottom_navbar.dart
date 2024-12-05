@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import '../../../../helpers/network_connection.dart';
 import '../../../../routes/app_routes.dart';
 import '../../../../utils/app_colors.dart';
-import '../../../../utils/app_icons.dart';
 import '../../../widgets/custom_text.dart';
 
 class DeliveryBottomNavBar extends StatefulWidget {
@@ -45,7 +44,7 @@ class _DeliveryBottomNavBarState extends State<DeliveryBottomNavBar> {
                 ),
               ),
               CustomText(
-                text: title,
+                text: title.tr,
                 color: widget.menuIndex == index ? Colors.white : Colors.black,
                 fontsize: 12.h,
               ),

@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:delivery_app/utils/app_colors.dart';
+import 'package:get/get.dart';
 import '../../../../utils/app_dimensions.dart';
 import '../../../../utils/app_images.dart';
 import '../../../widgets/custom_pin_code_text_field.dart';
@@ -77,7 +78,7 @@ class _VerifyEmailAddressScreenState extends State<VerifyEmailAddressScreen> {
                     children: [
                       /// ====================================> Text ====================================>
                       Text(
-                        "Verify Email Address",
+                        "Verify Email Address".tr,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: Dimensions.fontSizeOverLarge.sp,
@@ -87,7 +88,7 @@ class _VerifyEmailAddressScreenState extends State<VerifyEmailAddressScreen> {
                       ),
                       SizedBox(height: 12.h),
                       Text(
-                        "Enter the 6 digit code that we sent on your email.",
+                        "Enter the 6 digit code that we sent on your email.".tr,
                         textAlign: TextAlign.start,
                         style: TextStyle(
                           fontSize: Dimensions.fontSizeDefault.sp,
@@ -115,7 +116,7 @@ class _VerifyEmailAddressScreenState extends State<VerifyEmailAddressScreen> {
                   onTap: () {
                     // Add verification logic
                   },
-                  title: 'Verify Code'),
+                  title: 'Verify Code'.tr),
             ),
             SizedBox(height: 32.h),
             /// ======================================> Resend ===============================>
@@ -125,7 +126,7 @@ class _VerifyEmailAddressScreenState extends State<VerifyEmailAddressScreen> {
                 builder: (context, countdown, child) {
                   return RichText(
                     text: TextSpan(
-                      text: 'Didn’t receive the code? ',
+                      text: 'Didn’t receive the code? '.tr,
                       style: TextStyle(
                         color: AppColors.textColor333333,
                         fontSize: 14.sp,
@@ -134,7 +135,7 @@ class _VerifyEmailAddressScreenState extends State<VerifyEmailAddressScreen> {
                         TextSpan(
                           text: countdown > 0
                               ? 'Resend in ${countdown}s'
-                              : 'Resend Code',
+                              : 'Resend Code'.tr,
                           style: TextStyle(
                             color: countdown > 0
                                 ? AppColors.greenTextColor669B27

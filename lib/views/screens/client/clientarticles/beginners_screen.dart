@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_images.dart';
 import '../../../widgets/custom_text.dart';
@@ -16,7 +17,7 @@ class BeginnersScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: CustomText(
-          text: 'Beginners',
+          text: 'Beginners'.tr,
           fontsize: 20.h,
           color: AppColors.textColor333333,
         ),
@@ -40,9 +41,9 @@ class BeginnersScreen extends StatelessWidget {
                 _buildGridSection(4, (context, index) {
                   return BeginnersCard(
                     imageUrl: AppImages.articlesImage,
-                    name: "Common Delivery",
-                    title: "Lorem ipsum dolor sit amet consectetur.",
-                    subtitle: "Subtitle here",
+                    name: "Common Delivery".tr,
+                    title: "Lorem ipsum dolor sit amet consectetur.".tr,
+                    subtitle: "Subtitle here".tr,
                     icon: AppImages.bookmarkImage,
                     onTap: () {},
                   );

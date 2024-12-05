@@ -29,7 +29,7 @@ class ClientHomeScreenSuccessfulScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: CustomText(
-                  text: 'Successfull!',
+                  text: 'Successfull!'.tr,
                   fontWeight: FontWeight.w700,
                   fontsize: 24.h,
                   bottom: 8.h,
@@ -41,7 +41,7 @@ class ClientHomeScreenSuccessfulScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child: CustomText(
                   text:
-                  'Your request of 2 compost buckets has been placed successfully.',
+                  'Your request of 2 compost buckets has been placed successfully.'.tr,
                   fontWeight: FontWeight.w400,
                   color: AppColors.textColor6C6E72,
                   fontsize: 14.h,
@@ -56,7 +56,7 @@ class ClientHomeScreenSuccessfulScreen extends StatelessWidget {
                 child: CustomGradientButton(onTap: (){
                   Get.toNamed(AppRoutes.clientHomeScreen);
 
-                }, title: 'OK'),
+                }, title: 'OK'.tr),
               ),
               SizedBox(height: 30.h),
             ],

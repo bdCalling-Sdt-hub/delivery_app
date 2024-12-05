@@ -77,7 +77,7 @@ class OrdersScreen extends StatelessWidget {
                           Expanded(
                             child: Center(
                               child: CustomText(
-                                text: "Activity Summary",
+                                text: "Activity Summary".tr,
                                 fontsize: 20.sp,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -115,7 +115,7 @@ class OrdersScreen extends StatelessWidget {
                         Expanded(
                           child: TextField(
                             decoration: InputDecoration(
-                              hintText: 'Search',
+                              hintText: 'Search'.tr,
                               border: InputBorder.none,
                               hintStyle: TextStyle(
                                 color: Colors.grey.withOpacity(0.7),
@@ -142,14 +142,14 @@ class OrdersScreen extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 12.h),
                           child: OrderCard(
                             imageUrl: AppImages.orderImage,
-                            name: "Bucket Package",
-                            title: "Order ${index + 1}",
+                            name: "Bucket Package".tr,
+                            title: "Order ${index + 1}".tr,
                             subtitle: controller.subtitles[index],
                             deliveryStatus: index % 2 == 0
                                 ? "Delivered"
                                 : "Not Delivered",
-                            quantity: "01",
-                            location: "Bangalore 202343",
+                            quantity: "01".tr,
+                            location: "Bangalore 202343".tr,
                             comment:
                             "joshua_l The product in delivery was amazing and I want to share some photos",
                             onTap: () => controller.pickDate(index),

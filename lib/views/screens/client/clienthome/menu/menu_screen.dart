@@ -26,7 +26,7 @@ class MenuScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomText(
-                    text: 'Menu',
+                    text: 'Menu'.tr,
                     fontsize: 20.sp,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textColor020202,
@@ -70,14 +70,14 @@ class MenuScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomText(
-                          text: 'Alexandra Joes',
+                          text: 'Alexandra Joes'.tr,
                           fontsize: 18.sp,
                           fontWeight: FontWeight.w600,
                           color: AppColors.textColor020202,
                         ),
                         SizedBox(width: 4.h),
                         CustomText(
-                          text: 'info734@gmail.com',
+                          text: 'info734@gmail.com'.tr,
                           fontsize: 14.sp,
                           fontWeight: FontWeight.w400,
                           color: AppColors.textColor6C6E72,
@@ -100,7 +100,7 @@ class MenuScreen extends StatelessWidget {
                       [
                         _menuItem(
                           icon: Icons.help_outline,
-                          title: "FAQ’s",
+                          title: "FAQ’s".tr,
                           onTap: () {
                             Get.toNamed(AppRoutes.faqsScreen);
                           },
@@ -108,7 +108,7 @@ class MenuScreen extends StatelessWidget {
                         Divider(height: 1.h, color: AppColors.backgroundColorF0F5E9),
                         _menuItem(
                           icon: Icons.language,
-                          title: "Language",
+                          title: "Language".tr,
                           onTap: () {
                             Get.toNamed(AppRoutes.languageScreen);
                           },
@@ -116,7 +116,7 @@ class MenuScreen extends StatelessWidget {
                         Divider(height: 1.h, color: AppColors.backgroundColorF0F5E9),
                         _menuItem(
                           icon: Icons.history,
-                          title: "History",
+                          title: "History".tr,
                           onTap: () {
                             Get.toNamed(AppRoutes.menuHistoryScreen);
                           },
@@ -129,7 +129,7 @@ class MenuScreen extends StatelessWidget {
                       [
                         _menuItem(
                           icon: Icons.person_outline,
-                          title: "Edit Profile",
+                          title: "Edit Profile".tr,
                           onTap: () {
                             Get.toNamed(AppRoutes.editProfileScreen);
                           },
@@ -137,7 +137,7 @@ class MenuScreen extends StatelessWidget {
                         Divider(height: 1.h, color: AppColors.backgroundColorF0F5E9),
                         _menuItem(
                           icon: Icons.notifications_none,
-                          title: "Notification",
+                          title: "Notification".tr,
                           onTap: () {
                             Get.toNamed(AppRoutes.notificationScreen);
                           },
@@ -145,7 +145,7 @@ class MenuScreen extends StatelessWidget {
                         Divider(height: 1.h, color:AppColors.backgroundColorF0F5E9),
                         _menuItem(
                           icon: Icons.lock_outline,
-                          title: "Change Password",
+                          title: "Change Password".tr,
                           onTap: () {
                             Get.toNamed(AppRoutes.changePasswordScreen);
                           },
@@ -153,7 +153,7 @@ class MenuScreen extends StatelessWidget {
                         Divider(height: 1.h, color: AppColors.backgroundColorF0F5E9),
                         _menuItem(
                           icon: Icons.article_outlined,
-                          title: "Saved Articles",
+                          title: "Saved Articles".tr,
                           onTap: () {
                             Get.toNamed(AppRoutes.savedArticlesScreen);
                           },
@@ -166,7 +166,7 @@ class MenuScreen extends StatelessWidget {
                       [
                         _menuItem(
                           icon: Icons.open_in_new_outlined,
-                          title: "Terms of Service",
+                          title: "Terms of Service".tr,
                           onTap: () {
                             Get.toNamed(AppRoutes.termServicesScreen);
                           },
@@ -174,7 +174,7 @@ class MenuScreen extends StatelessWidget {
                         Divider(height: 1.h, color: AppColors.backgroundColorF0F5E9),
                         _menuItem(
                           icon: Icons.privacy_tip_outlined,
-                          title: "Privacy Policy",
+                          title: "Privacy Policy".tr,
                           onTap: () {
                             Get.toNamed(AppRoutes.privacyPolicyScreen);
                           },
@@ -182,7 +182,7 @@ class MenuScreen extends StatelessWidget {
                         Divider(height: 1.h, color: AppColors.backgroundColorF0F5E9),
                         _menuItem(
                           icon: Icons.info_outline,
-                          title: "About Us",
+                          title: "About Us".tr,
                           onTap: () {
                             Get.toNamed(AppRoutes.aboutUsScreen);
                           },
@@ -193,7 +193,7 @@ class MenuScreen extends StatelessWidget {
                     /// Logout
                     _menuItem(
                       icon: Icons.logout,
-                      title: "Logout",
+                      title: "Logout".tr,
                       onTap: () {
                         Get.offAllNamed(AppRoutes.loginScreen);
                       },

@@ -58,7 +58,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       height: 135.h,
                       fit: BoxFit.cover,
                     ),
-                    /// Title in Banner
                     /// Background Image
                     Container(
                       color: AppColors.primaryColor,
@@ -86,7 +85,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                           Expanded(
                             child: Center(
                               child: CustomText(
-                                text: "Edit Profile",
+                                text: "Edit Profile".tr,
                                 fontsize: 20.sp,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -100,7 +99,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   ],
                 ),
                 SizedBox(height: 17.h),
-
                 /// ==============================> Profile Card ============================>
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
@@ -169,7 +167,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     children: [
                       /// ====================================> First Name ==================================>
                       CustomText(
-                        text: 'First Name',
+                        text: 'First Name'.tr,
                         fontsize: 14.sp,
                         fontWeight: FontWeight.w400,
                         color: AppColors.textColor333333,
@@ -177,7 +175,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       SizedBox(height: 11.h),
                       CustomTextField(
                         controller: firstNameCtrl,
-                        hintText: 'Enter first name',
+                        hintText: 'Enter first name'.tr,
                         prefixIcon: 'assets/icons/user-line.svg',
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -193,7 +191,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       SizedBox(height: 20.h),
                       /// ====================================> Last Name ==================================>
                       CustomText(
-                        text: 'Last Name',
+                        text: 'Last Name'.tr,
                         fontsize: 14.sp,
                         fontWeight: FontWeight.w400,
                         color: AppColors.textColor333333,
@@ -201,7 +199,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       SizedBox(height: 11.h),
                       CustomTextField(
                         controller: lastNameCtrl,
-                        hintText: 'Enter last name',
+                        hintText: 'Enter last name'.tr,
                         prefixIcon: 'assets/icons/user-line.svg',
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -215,7 +213,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       SizedBox(height: 20.h),
                       /// =====================================> Email ===================================>
                       CustomText(
-                        text: 'Email Address',
+                        text: 'Email Address'.tr,
                         fontsize: 14.sp,
                         fontWeight: FontWeight.w400,
                         color: AppColors.textColor333333,
@@ -223,7 +221,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       SizedBox(height: 11.h),
                       CustomTextField(
                         controller: emailCtrl,
-                        hintText: 'Enter your email address',
+                        hintText: 'Enter your email address'.tr,
                         prefixIcon: 'assets/icons/mail.svg',
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -239,7 +237,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       SizedBox(height: 20.h),
                       /// =====================================> Password ===================================>
                       CustomText(
-                        text: 'Password',
+                        text: 'Password'.tr,
                         fontsize: 14.sp,
                         fontWeight: FontWeight.w400,
                         color: AppColors.textColor333333,
@@ -247,7 +245,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       SizedBox(height: 11.h),
                       CustomTextField(
                         controller: passCtrl,
-                        hintText: 'Enter your password',
+                        hintText: 'Enter your password'.tr,
                         prefixIcon: 'assets/icons/lock.svg',
                         isObscureText: true,
                         isPassword: true,
@@ -263,7 +261,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       SizedBox(height: 20.h),
                       /// =====================================> Phone Number ===================================>
                       CustomText(
-                        text: 'Phone Number',
+                        text: 'Phone Number'.tr,
                         fontsize: 14.sp,
                         fontWeight: FontWeight.w400,
                         color: AppColors.textColor333333,
@@ -291,7 +289,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       SizedBox(height: 20.h),
                       /// =====================================> Address ===================================>
                       CustomText(
-                        text: 'Address',
+                        text: 'Address'.tr,
                         fontsize: 14.sp,
                         fontWeight: FontWeight.w400,
                         color: AppColors.textColor333333,
@@ -299,7 +297,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       SizedBox(height: 11.h),
                       CustomTextField(
                         controller: addressCtrl,
-                        hintText: 'Enter address',
+                        hintText: 'Enter address'.tr,
                         prefixIcon: 'assets/icons/location.svg',
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -314,7 +312,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       CustomGradientButton(onTap: (){
                         Get.toNamed(AppRoutes.verifyEmailAddressScreen);
 
-                      }, title: 'Save'),
+                      }, title: 'Save'.tr),
                       SizedBox(height: 24.h),
                     ],
                   ),
@@ -343,7 +341,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           children: [
             ListTile(
               leading: const Icon(Icons.photo_library),
-              title: Text("Pick from Gallery"),
+              title: Text("Pick from Gallery".tr),
               onTap: () {
                 editProfileController.pickImageFromGallery();
                 Get.back();
@@ -351,7 +349,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             ),
             ListTile(
               leading: Icon(Icons.camera_alt),
-              title: Text("Capture with Camera"),
+              title: Text("Capture with Camera".tr),
               onTap: () {
                 editProfileController.captureImageFromCamera();
                 Get.back();

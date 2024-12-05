@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../../../utils/app_images.dart';
 import '../../../widgets/delivery_history_card.dart';
-import '../deliveryhistory/delivery_history_controller.dart';
+import '../../../../controllers/delivery/delivery_history_controller.dart';
 
 class DeliveryHistoryScreen extends StatelessWidget {
   DeliveryHistoryScreen({super.key});
@@ -41,7 +41,7 @@ class DeliveryHistoryScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 32.h),
                       child: Text(
-                        "History",
+                        "History".tr,
                         style: TextStyle(
                           fontSize: 20.sp,
                           fontWeight: FontWeight.bold,
@@ -65,8 +65,8 @@ class DeliveryHistoryScreen extends StatelessWidget {
                         padding: EdgeInsets.only(bottom: 10.h),
                         child: DeliveryHistoryCard(
                           imageUrl: AppImages.dImage,
-                          subtitle: '12/04/2024',
-                          completedOrders: '12',
+                          subtitle: '12/04/2024'.tr,
+                          completedOrders: '12'.tr,
                           onTap: () {
                             print('View Details clicked!');
                           },

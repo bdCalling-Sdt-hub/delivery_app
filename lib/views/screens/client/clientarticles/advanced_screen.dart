@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_images.dart';
 import '../../../widgets/advanced_card.dart';
@@ -16,7 +17,7 @@ class AdvancedScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: CustomText(
-          text: 'Advanced',
+          text: 'Advanced'.tr,
           fontsize: 20.h,
           color: AppColors.textColor333333,
         ),
@@ -40,9 +41,9 @@ class AdvancedScreen extends StatelessWidget {
                 _buildGridSection(2, (context, index) {
                   return AdvancedCard(
                     imageUrl: AppImages.advancedImage,
-                    name: "The Future of Package",
-                    title: "Lorem ipsum dolor sit amet consectetur.",
-                    subtitle: "Subtitle here",
+                    name: "The Future of Package".tr,
+                    title: "Lorem ipsum dolor sit amet consectetur.".tr,
+                    subtitle: "Subtitle here".tr,
                     icon: AppImages.bookmarkImage,
                     onTap: () {},
                   );

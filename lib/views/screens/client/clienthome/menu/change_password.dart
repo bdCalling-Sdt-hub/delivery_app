@@ -57,7 +57,6 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       fit: BoxFit.cover,
                     ),
 
-                    /// Title in Banner
                     /// Background Image
                     Container(
                       color: AppColors.primaryColor,
@@ -74,7 +73,6 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                           horizontal: 16.w, vertical: 20.h),
                       child: Row(
                         children: [
-
                           /// Back Button Icon
                           GestureDetector(
                             onTap: () {
@@ -87,12 +85,11 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                               color: Colors.white,
                             ),
                           ),
-
                           /// Title
                           Expanded(
                             child: Center(
                               child: CustomText(
-                                text: "Edit Profile",
+                                text: "Change Password".tr,
                                 fontsize: 20.sp,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -106,8 +103,6 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   ],
                 ),
                 SizedBox(height: 17.h),
-
-
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: 20.h, vertical: 20.w),
@@ -117,7 +112,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
 
                       /// =====================================> Current Password ===================================>
                       CustomText(
-                        text: 'Current Password',
+                        text: 'Current Password'.tr,
                         fontsize: 14.sp,
                         fontWeight: FontWeight.w400,
                         color: AppColors.textColor333333,
@@ -125,7 +120,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       SizedBox(height: 11.h),
                       CustomTextField(
                         controller: currentPasswordCTRl,
-                        hintText: 'Enter current password',
+                        hintText: 'Enter current password'.tr,
                         prefixIcon: 'assets/icons/lock.svg',
                         isObscureText: true,
                         isPassword: true,
@@ -141,7 +136,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       SizedBox(height: 20.h),
                       /// =====================================> New Password ===================================>
                       CustomText(
-                        text: 'New Password',
+                        text: 'New Password'.tr,
                         fontsize: 14.sp,
                         fontWeight: FontWeight.w400,
                         color: AppColors.textColor333333,
@@ -149,7 +144,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       SizedBox(height: 11.h),
                       CustomTextField(
                         controller: newPasswordCTRl,
-                        hintText: 'Enter new password',
+                        hintText: 'Enter new password'.tr,
                         prefixIcon: 'assets/icons/lock.svg',
                         isObscureText: true,
                         isPassword: true,
@@ -165,7 +160,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       SizedBox(height: 20.h),
                       /// =====================================> Confirm New Password ===================================>
                       CustomText(
-                        text: 'Confirm New Password',
+                        text: 'Confirm New Password'.tr,
                         fontsize: 14.sp,
                         fontWeight: FontWeight.w400,
                         color: AppColors.textColor333333,
@@ -173,7 +168,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       SizedBox(height: 11.h),
                       CustomTextField(
                         controller: conformPasswordCTRl,
-                        hintText: 'Enter confirm password',
+                        hintText: 'Enter confirm password'.tr,
                         prefixIcon: 'assets/icons/lock.svg',
                         isObscureText: true,
                         isPassword: true,
@@ -190,7 +185,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       SizedBox(height: 200.h),
                       CustomGradientButton(onTap: () {
                         Get.toNamed(AppRoutes.verifyEmailAddressScreen);
-                      }, title: 'Save'),
+                      }, title: 'Save'.tr),
                       SizedBox(height: 24.h),
                     ],
                   ),

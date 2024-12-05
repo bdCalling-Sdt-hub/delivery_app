@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            "Welcome Back!",
+                            "Welcome Back!".tr,
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: Dimensions.fontSizeOverLarge.sp,
@@ -70,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       SizedBox(height: 12.h),
                       Text(
-                        "Glad to see you again! Please log in to continue.",
+                        "Glad to see you again! Please log in to continue.".tr,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: Dimensions.fontSizeDefault.sp,
@@ -92,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: 20.h),
                   /// =====================================> Email ===================================>
                   CustomText(
-                    text: 'Email Address',
+                    text: 'Email Address'.tr,
                     fontsize: 14.sp,
                     fontWeight: FontWeight.w400,
                     color: AppColors.textColor333333,
@@ -100,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: 11.h),
                   CustomTextField(
                     controller: emailCtrl,
-                    hintText: 'Enter your email address',
+                    hintText: 'Enter your email address'.tr,
                     prefixIcon: 'assets/icons/mail.svg',
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -117,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   /// =====================================> Password ===================================>
                   CustomText(
-                    text: 'Password',
+                    text: 'Password'.tr,
                     fontsize: 14.sp,
                     fontWeight: FontWeight.w400,
                     color: AppColors.textColor333333,
@@ -125,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: 11.h),
                   CustomTextField(
                     controller: passCtrl,
-                    hintText: 'Enter your password',
+                    hintText: 'Enter your password'.tr,
                     prefixIcon: 'assets/icons/lock.svg',
                     isObscureText: true,
                     isPassword: true,
@@ -141,24 +141,24 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: 20.h),
                   CustomGradientButton(onTap: (){
                     showDialog(context: context, builder:(_)=>AlertDialog(
-                      title: const Text("Select Role"),
+                      title:  Text("Select Role".tr),
                       content:Row(
                         children: [
                           TextButton(onPressed:(){
                             Get.toNamed(AppRoutes.clientHomeScreen);
 
-                          }, child:const Text("Client")),
+                          }, child: Text("Client".tr)),
 
                           TextButton(onPressed:(){
                             Get.offAllNamed(AppRoutes.deliveryHomeScreen);
-                          }, child:const Text("Driver")),
+                          }, child: Text("Driver".tr)),
                         ],
                       ),
 
 
 
                     ));
-                  }, title: 'Log In'),
+                  }, title: 'Log In'.tr),
                   SizedBox(height: 47.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -169,7 +169,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           );
                         },
                         child: CustomText(
-                          text: 'Forgot Password?',
+                          text: 'Forgot Password?'.tr,
                           fontsize: 16.h,
                           fontWeight: FontWeight.w500,
                           color: AppColors.greenTextColor669B27,
@@ -189,7 +189,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       CustomText(
-                        text: 'OR',
+                        text: 'OR'.tr,
                         color: AppColors.textColor8F8F8F,
                         fontsize: 20.sp,
                         fontWeight: FontWeight.w400,
@@ -254,7 +254,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       onPressed: () {},
                       child: RichText(
                         text: TextSpan(
-                          text: 'Don’t have an account? ',
+                          text: 'Don’t have an account? '.tr,
                           style: TextStyle(color: AppColors.textColor333333, fontSize: 14.sp),
                           children: <TextSpan>[
                             TextSpan(

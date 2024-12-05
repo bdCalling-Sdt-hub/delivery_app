@@ -4,6 +4,7 @@ import 'package:delivery_app/views/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import '../../../../utils/app_constants.dart';
 import '../../../../utils/app_dimensions.dart';
 import '../../../../utils/app_images.dart';
@@ -46,7 +47,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Forgot Password",
+                        "Forgot Password".tr,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: Dimensions.fontSizeOverLarge.sp,
@@ -56,7 +57,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       ),
                       SizedBox(height: 12.h),
                       Text(
-                        "Not to worry it happens to the best of us. Please enter your email address below.",
+                        "Not to worry it happens to the best of us. Please enter your email address below.".tr,
                         textAlign: TextAlign.center,
                         maxLines: 4,
                         style: TextStyle(
@@ -79,7 +80,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   SizedBox(height: 20.h),
                   /// =====================================> Email ===================================>
                   CustomText(
-                    text: 'Email Address',
+                    text: 'Email Address'.tr,
                     fontsize: 14.sp,
                     fontWeight: FontWeight.w400,
                     color: AppColors.textColor333333,
@@ -87,7 +88,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   SizedBox(height: 11.h),
                   CustomTextField(
                     controller: emailCtrl,
-                    hintText: 'Enter your email address',
+                    hintText: 'Enter your email address'.tr,
                     prefixIcon: 'assets/icons/mail.svg',
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -105,7 +106,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   CustomGradientButton(onTap: (){
                     _showCustomDialog(context);
 
-                  }, title: 'Submit'),
+                  }, title: 'Submit'.tr),
                   SizedBox(height: 47.h),
 
                 ],
@@ -156,14 +157,14 @@ void _showCustomDialog(BuildContext context) {
               ),
               SizedBox(height: 16.h),
               CustomText(
-                text: 'Reset Link',
+                text: 'Reset Link'.tr,
                 fontsize: 17.sp,
                 fontWeight: FontWeight.w700,
                 color: AppColors.textColor333333,
               ),
               SizedBox(height: 8.h),
               CustomText(
-                text: 'A reset link has been emailed to you. Please also check your spam.',
+                text: 'A reset link has been emailed to you. Please also check your spam.'.tr,
                 fontsize: 14.sp,
                 fontWeight: FontWeight.w400,
                 color: AppColors.textColor333333,
@@ -177,7 +178,7 @@ void _showCustomDialog(BuildContext context) {
                   onTap: () {
                     Navigator.of(context).pop();
                   },
-                  title: 'OK',
+                  title: 'OK'.tr,
                 ),
               ),
             ],

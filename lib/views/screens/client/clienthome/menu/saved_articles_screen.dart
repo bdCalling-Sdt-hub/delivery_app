@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 import '../../../../../utils/app_colors.dart';
 import '../../../../../utils/app_images.dart';
@@ -68,7 +69,7 @@ class SavedArticlesScreen extends StatelessWidget {
                           Expanded(
                             child: Center(
                               child: Text(
-                                "Saved Articles",
+                                "Saved Articles".tr,
                                 style: TextStyle(
                                   fontSize: 20.sp,
                                   fontWeight: FontWeight.bold,
@@ -87,9 +88,9 @@ class SavedArticlesScreen extends StatelessWidget {
                 _buildGridSection(2, (context, index) {
                   return SavedArticlesCard(
                     imageUrl: AppImages.advancedImage,
-                    name: "Common Delivery...",
-                    title: "Lorem ipsum dolor sit amet consectetur.",
-                    subtitle: "Subtitle here",
+                    name: "Common Delivery...".tr,
+                    title: "Lorem ipsum dolor sit amet consectetur.".tr,
+                    subtitle: "Subtitle here".tr,
                     icon: AppImages.bookmarkImage,
                     onTap: () {},
                   );

@@ -10,19 +10,13 @@ import 'helpers/di.dart' as di;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Map<String, Map<String, String>> _languages = await di.init();
-
-  runApp(MyApp(
-      // languages: _languages,
-      ));
+  Map<String, Map<String, String>> _languages = await di.init();
+  runApp(MyApp(languages: _languages,));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({
-    super.key,
-  });
-
-  // final Map<String, Map<String, String>> languages;
+  const MyApp({super.key, required this.languages});
+  final Map<String, Map<String, String>> languages;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +31,7 @@ class MyApp extends StatelessWidget {
             navigatorKey: Get.key,
             theme: light(),
             defaultTransition: Transition.topLevel,
-            // translations: Messages(languages: languages),
+            translations: Messages(languages: languages),
             fallbackLocale: Locale(AppConstants.languages[0].languageCode,
                 AppConstants.languages[0].countryCode),
             transitionDuration: const Duration(milliseconds: 500),

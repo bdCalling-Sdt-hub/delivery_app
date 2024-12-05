@@ -4,6 +4,7 @@ import 'package:delivery_app/views/widgets/informative_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import '../../../../../utils/app_images.dart';
 
 class FaqsScreen extends StatelessWidget {
@@ -56,7 +57,7 @@ class FaqsScreen extends StatelessWidget {
                         Expanded(
                           child: Center(
                             child: Text(
-                              'FAQ’s',
+                              'FAQ’s'.tr,
                               style: TextStyle(
                                 fontSize: 20.sp,
                                 fontWeight: FontWeight.w600,
@@ -91,7 +92,7 @@ class FaqsScreen extends StatelessWidget {
                   child: TextField(
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText: 'Search...',
+                      hintText: 'Search...'.tr,
                       hintStyle: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 14.sp,
@@ -111,29 +112,29 @@ class FaqsScreen extends StatelessWidget {
                     children: [
                       /// FAQ Items
                       faqTile(
-                        question: 'How can I track my package?',
+                        question: 'How can I track my package?'.tr,
                         answer:
-                        'Some shipping options allow for scheduled deliveries. Please review the available options during checkout or contact our team for more details.',
+                        'Some shipping options allow for scheduled deliveries. Please review the available options during checkout or contact our team for more details.'.tr,
                       ),
                       faqTile(
-                        question: 'What should I do if my package is delayed?',
+                        question: 'What should I do if my package is delayed?'.tr,
                       ),
                       faqTile(
-                        question: 'What are the available shipping options?',
+                        question: 'What are the available shipping options?'.tr,
                       ),
                       faqTile(
-                        question: 'Handle a lost or stolen package?',
+                        question: 'Handle a lost or stolen package?'.tr
                       ),
                       faqTile(
-                        question: 'Are there any restrictions on what I can send?',
+                        question: 'Are there any restrictions on what I can send?'.tr,
                       ),
                       faqTile(
-                        question: 'Can I schedule a specific delivery time?',
+                        question: 'Can I schedule a specific delivery time?'.tr,
                         answer:
-                        'Some shipping options allow for scheduled deliveries. Please review the available options during checkout or contact our team for more details.',
+                        'Some shipping options allow for scheduled deliveries. Please review the available options during checkout or contact our team for more details.'.tr,
                       ),
                       faqTile(
-                        question: 'Home when the package is delivered?',
+                        question: 'Home when the package is delivered?'.tr,
                       ),
                       SizedBox(height: 24.h),
                       /// ======================================> Informative Videos Section ================================>
@@ -141,7 +142,7 @@ class FaqsScreen extends StatelessWidget {
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         child: Align(
                           alignment: Alignment.centerLeft,
-                          child:  CustomText(text: 'Informative Videos',fontsize: 16.sp,fontWeight: FontWeight.w600)
+                          child:  CustomText(text: 'Informative Videos'.tr,fontsize: 16.sp,fontWeight: FontWeight.w600)
 
                         ),
                       ),
@@ -150,9 +151,9 @@ class FaqsScreen extends StatelessWidget {
                       _buildGridSection(2, (context, index) {
                         return InformativeCard(
                           imageUrl: AppImages.informativeImage,
-                          name: "Video Title",
-                          title: "Lorem ipsum dolor sit amet consectetur.",
-                          subtitle: "Subtitle here",
+                          name: "Video Title".tr,
+                          title: "Lorem ipsum dolor sit amet consectetur.".tr,
+                          subtitle: "Subtitle here".tr,
                           icon: AppImages.bookmarkImage,
                           onTap: () {
 
