@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class OrderCard extends StatelessWidget {
   final String imageUrl;
@@ -96,7 +97,7 @@ class OrderCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Quantity: $quantity",
+                  "Quantity: $quantity".tr,
                   style: TextStyle(fontSize: 14.sp, color: Colors.grey),
                 ),
                 Text(
@@ -122,7 +123,7 @@ class OrderCard extends StatelessWidget {
                 ),
                 SizedBox(height: 4.h),
                 Text(
-                  "No. of Buckets Delivered: 20",
+                  "No. of Buckets Delivered: 20".tr,
                   style: TextStyle(fontSize: 12.sp, color: Colors.black),
                 ),
               ],
@@ -147,7 +148,7 @@ class OrderCard extends StatelessWidget {
             GestureDetector(
               onTap: onTap,
               child: Text(
-                "View all comments",
+                "View all comments".tr,
                 style: TextStyle(
                   fontSize: 12.sp,
                   color: Colors.blue,

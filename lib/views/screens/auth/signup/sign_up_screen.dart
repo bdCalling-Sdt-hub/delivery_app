@@ -59,7 +59,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     /// ====================================> text ====================================>
                     children: [
                       Text(
-                        "Register",
+                        "Register".tr,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: Dimensions.fontSizeOverLarge.sp,
@@ -69,7 +69,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       SizedBox(height: 12.h),
                       Text(
-                        "Sign up to get started and unlock all features!",
+                        "Sign up to get started and unlock all features!".tr,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: Dimensions.fontSizeDefault.sp,
@@ -89,7 +89,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 children: [
                   /// ====================================> First Name ==================================>
                   CustomText(
-                      text: 'First Name',
+                      text: 'First Name'.tr,
                     fontsize: 14.sp,
                     fontWeight: FontWeight.w400,
                     color: AppColors.textColor333333,
@@ -97,7 +97,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 11.h),
                   CustomTextField(
                     controller: firstNameCtrl,
-                    hintText: 'Enter first name',
+                    hintText: 'Enter first name'.tr,
                     prefixIcon: 'assets/icons/user-line.svg',
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -113,7 +113,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 20.h),
                   /// ====================================> Last Name ==================================>
                   CustomText(
-                    text: 'Last Name',
+                    text: 'Last Name'.tr,
                     fontsize: 14.sp,
                     fontWeight: FontWeight.w400,
                     color: AppColors.textColor333333,
@@ -121,7 +121,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 11.h),
                   CustomTextField(
                     controller: lastNameCtrl,
-                    hintText: 'Enter last name',
+                    hintText: 'Enter last name'.tr,
                     prefixIcon: 'assets/icons/user-line.svg',
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -135,7 +135,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 20.h),
                   /// =====================================> Email ===================================>
                   CustomText(
-                    text: 'Email Address',
+                    text: 'Email Address'.tr,
                     fontsize: 14.sp,
                     fontWeight: FontWeight.w400,
                     color: AppColors.textColor333333,
@@ -143,7 +143,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 11.h),
                   CustomTextField(
                     controller: emailCtrl,
-                    hintText: 'Enter your email address',
+                    hintText: 'Enter your email address'.tr,
                     prefixIcon: 'assets/icons/mail.svg',
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -159,7 +159,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 20.h),
                   /// =====================================> Phone Number ===================================>
                   CustomText(
-                    text: 'Phone Number',
+                    text: 'Phone Number'.tr,
                     fontsize: 14.sp,
                     fontWeight: FontWeight.w400,
                     color: AppColors.textColor333333,
@@ -187,7 +187,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 20.h),
                   /// =====================================> Address ===================================>
                   CustomText(
-                    text: 'Address',
+                    text: 'Address'.tr,
                     fontsize: 14.sp,
                     fontWeight: FontWeight.w400,
                     color: AppColors.textColor333333,
@@ -195,7 +195,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 11.h),
                   CustomTextField(
                     controller: addressCtrl,
-                    hintText: 'Enter address',
+                    hintText: 'Enter address'.tr,
                     prefixIcon: 'assets/icons/location.svg',
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -209,7 +209,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 20.h),
                   /// =====================================> Password ===================================>
                   CustomText(
-                    text: 'Password',
+                    text: 'Password'.tr,
                     fontsize: 14.sp,
                     fontWeight: FontWeight.w400,
                     color: AppColors.textColor333333,
@@ -217,7 +217,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 11.h),
                   CustomTextField(
                     controller: passCtrl,
-                    hintText: 'Enter your password',
+                    hintText: 'Enter your password'.tr,
                     prefixIcon: 'assets/icons/lock.svg',
                     isObscureText: true,
                     isPassword: true,
@@ -233,21 +233,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 20.h),
                   /// =====================================> Confirm Password ===================================>
                   CustomText(
-                    text: 'Confirm Password',
+                    text: 'Confirm Password'.tr,
                     fontsize: 14.sp,
                     fontWeight: FontWeight.w400,
                     color: AppColors.textColor333333,
                   ),
                   SizedBox(height: 11.h),
                   CustomTextField(
-                    controller: passCtrl,
-                    hintText: 'Enter confirm password',
+                    controller: conformPassCtrl,
+                    hintText: 'Enter confirm password'.tr,
                     prefixIcon: 'assets/icons/lock.svg',
                     isObscureText: true,
                     isPassword: true,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return "Please enter your password";
+                        return "Please enter your conform password";
                       }
                       return null;
                     },
@@ -280,19 +280,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           TextSpan(
                             children: [
                               TextSpan(
-                                text: 'Accept ',
+                                text: 'Accept '.tr,
                                 style: Theme.of(context).textTheme.bodyMedium,
                               ),
                               TextSpan(
-                                text: 'Terms & Condition ',
+                                text: 'Terms & Condition '.tr,
                                 style: Theme.of(context).textTheme.bodyMedium!.apply(color: AppColors.primaryColor),
                               ),
                               TextSpan(
-                                text: 'and ',
+                                text: 'and '.tr,
                                 style: Theme.of(context).textTheme.bodyMedium,
                               ),
                               TextSpan(
-                                text: 'Privacy Policy',
+                                text: 'Privacy Policy'.tr,
                                 style: Theme.of(context).textTheme.bodyMedium!.apply(color: AppColors.primaryColor),
                               ),
                             ],
@@ -305,7 +305,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   CustomGradientButton(onTap: (){
                     Get.toNamed(AppRoutes.verifyEmailAddressScreen);
 
-                  }, title: 'Sign Up'),
+                  }, title: 'Sign Up'.tr),
                   SizedBox(height: 24.h),
                   /// =====================================> Account & Log in ===================================>
                   Center(
@@ -313,11 +313,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       onPressed: () {},
                       child: RichText(
                         text: TextSpan(
-                          text: 'Already have an account? ',
+                          text: 'Already have an account? '.tr,
                           style: TextStyle(color: AppColors.textColor333333, fontSize: 14.sp),
                           children: <TextSpan>[
                             TextSpan(
-                              text: 'Log In',
+                              text: 'Log In'.tr,
                               style: TextStyle(color: AppColors.primaryColor, fontSize: 16.sp),
                               recognizer: TapGestureRecognizer()..onTap = (){
                                 Get.toNamed(AppRoutes.loginScreen);

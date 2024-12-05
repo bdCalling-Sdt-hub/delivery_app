@@ -53,7 +53,7 @@ class DeliveryHomeScreen extends StatelessWidget {
                     onTap: () {
                       Get.toNamed(AppRoutes.summarizeTodayActivityScreen);
                     },
-                    title: 'Summarize Today Activity',
+                    title: 'Summarize Today Activity'.tr,
                   ),
                   SizedBox(height: 27.h),
                 ],
@@ -81,14 +81,14 @@ class DeliveryHomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomText(
-                  text: 'Welcome Back,',
+                  text: 'Welcome Back'.tr,
                   fontsize: 14.sp,
                   fontWeight: FontWeight.w400,
                   color: AppColors.textColor6C6E72,
                 ),
                 SizedBox(height: 6.h),
                 CustomText(
-                  text: 'Alexandra Joess',
+                  text: 'Alexandra Joess'.tr,
                   fontsize: 18.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textColor020202,
@@ -163,7 +163,7 @@ class DeliveryHomeScreen extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                '1',
+                '1'.tr,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 10.sp,
@@ -183,14 +183,14 @@ class DeliveryHomeScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomText(
-          text: 'Your Delivery, Just a Tap Away',
+          text: 'Your Delivery, Just a Tap Away'.tr,
           fontsize: 24.sp,
           fontWeight: FontWeight.w600,
           color: AppColors.textColor020202,
         ),
         SizedBox(height: 2.h),
         CustomText(
-          text: 'Check below for your upcoming deliveries',
+          text: 'Check below for your upcoming deliveries'.tr,
           fontsize: 14.sp,
           fontWeight: FontWeight.w500,
           color: AppColors.textColor6C6E72,
@@ -223,14 +223,14 @@ class DeliveryHomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CustomText(
-                  text: 'Seamless Ordering',
+                  text: 'Seamless Ordering'.tr,
                   fontsize: 18.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textColorFFFFFF,
                 ),
                 SizedBox(height: 4.h),
                 CustomText(
-                  text: 'Simplifying Your Delivery Experience →',
+                  text: 'Simplifying Your Delivery Experience →'.tr,
                   fontsize: 14.sp,
                   fontWeight: FontWeight.w400,
                   maxline: 2,
@@ -254,7 +254,7 @@ class DeliveryHomeScreen extends StatelessWidget {
   /// Section Header Widget
   Widget _buildSectionHeader(String title) {
     return CustomText(
-      text: title,
+      text: title.tr,
       fontsize: 18.sp,
       fontWeight: FontWeight.w600,
       color: AppColors.textColor333333,
@@ -298,14 +298,14 @@ class DeliveryHomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomText(
-                  text: 'Bucket Package',
+                  text: 'Bucket Package'.tr,
                   fontsize: 16.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textColor333333,
                 ),
                 SizedBox(height: 5.h),
                 CustomText(
-                  text: 'Quantity : 01',
+                  text: 'Quantity : 01'.tr,
                   fontsize: 14.sp,
                   fontWeight: FontWeight.w500,
                   color: AppColors.textColor6C6E72,
@@ -317,7 +317,7 @@ class DeliveryHomeScreen extends StatelessWidget {
                     SvgPicture.asset('assets/icons/location.svg',height: 12.h,width: 12.w),
                     SizedBox(width: 4.w),
                     CustomText(
-                      text: 'Bangalore 202343',
+                      text: 'Bangalore 202343'.tr,
                       fontsize: 14.sp,
                       fontWeight: FontWeight.w500,
                       color: AppColors.textColor6C6E72,
@@ -335,7 +335,7 @@ class DeliveryHomeScreen extends StatelessWidget {
               // Navigate to order details
               Get.toNamed(AppRoutes.deliveryHomeDetailsScreen);
             },
-            title: 'View Details',
+            title: 'View Details'.tr,
             height: 35.h,
             width: 100.w,
           ),

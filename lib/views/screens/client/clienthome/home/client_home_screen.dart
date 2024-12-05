@@ -41,14 +41,14 @@ class ClientHomeScreen extends StatelessWidget {
 
                 /// ===================================> Page Title Section ==============================>
                 CustomText(
-                  text: 'New request',
+                  text: 'New request'.tr,
                   fontsize: 24.sp,
                   fontWeight: FontWeight.w700,
                   color: AppColors.textColor020202,
                 ),
                 SizedBox(height: 2.h),
                 CustomText(
-                  text: 'Add below details to place new request.',
+                  text: 'Add below details to place new request.'.tr,
                   fontsize: 14.sp,
                   fontWeight: FontWeight.w500,
                   color: AppColors.textColor6C6E72,
@@ -57,7 +57,7 @@ class ClientHomeScreen extends StatelessWidget {
 
                 /// ==============================> Request Type Dropdown ================================>
                 CustomText(
-                  text: 'Request Type',
+                  text: 'Request Type'.tr,
                   fontsize: 14.sp,
                   fontWeight: FontWeight.w400,
                   color: AppColors.textColor333333,
@@ -65,7 +65,7 @@ class ClientHomeScreen extends StatelessWidget {
                 SizedBox(height: 11.h),
                  DropdownButtonFormField<String>(
                     decoration: InputDecoration(
-                      hintText: 'Select type',
+                      hintText: 'Select type'.tr,
                       hintStyle: TextStyle(fontSize: 14.sp, color: const Color(0xFFB1B1B1)),
                       filled: true,
                       fillColor: const Color(0xFFEDEDEE),
@@ -91,7 +91,7 @@ class ClientHomeScreen extends StatelessWidget {
 
                 /// ==============================>  Quantity Field ============================>
                 CustomText(
-                  text: 'Quantity',
+                  text: 'Quantity'.tr,
                   fontsize: 14.sp,
                   fontWeight: FontWeight.w400,
                   color: AppColors.textColor333333,
@@ -101,7 +101,7 @@ class ClientHomeScreen extends StatelessWidget {
                     keyboardType: TextInputType.number,
                     onChanged: (value) => controller.quantity.value = value,
                     decoration: InputDecoration(
-                      hintText: 'Enter quantity',
+                      hintText: 'Enter quantity'.tr,
                       hintStyle: TextStyle(fontSize: 14.sp, color: const Color(0xFFB1B1B1)),
                       filled: true,
                       contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 12.w),
@@ -123,7 +123,7 @@ class ClientHomeScreen extends StatelessWidget {
                   onTap: (){
                     Get.toNamed(AppRoutes.clientHomeScreenSuccessfulScreen);
                   },
-                  title: 'Validate my request',
+                  title: 'Validate my request'.tr,
                 ),
               ],
             ),
@@ -149,14 +149,14 @@ class ClientHomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomText(
-                  text: 'Welcome Back,',
+                  text: 'Welcome Back,'.tr,
                   fontsize: 14.sp,
                   fontWeight: FontWeight.w400,
                   color: AppColors.textColor6C6E72,
                 ),
                 SizedBox(height: 6.h),
                 CustomText(
-                  text: 'Ronald Richards',
+                  text: 'Ronald Richards'.tr,
                   fontsize: 18.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textColor020202,
@@ -191,7 +191,7 @@ class ClientHomeScreen extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        '1',
+                        '1'.tr,
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 10.sp,

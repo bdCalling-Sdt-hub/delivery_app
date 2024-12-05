@@ -1,6 +1,7 @@
 import 'package:delivery_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class InformativeCard extends StatelessWidget {
   final String imageUrl;
@@ -80,7 +81,7 @@ class InformativeCard extends StatelessWidget {
                 children: [
                   /// ==============================> Name ===============================>
                   Text(
-                    name,
+                    name.tr,
                     style: TextStyle(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w500,
@@ -91,7 +92,7 @@ class InformativeCard extends StatelessWidget {
 
                   /// ==============================> Title ===============================>
                   Text(
-                    title,
+                    title.tr,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(

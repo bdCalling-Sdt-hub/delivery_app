@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import '../../../../../utils/app_colors.dart';
 import '../../../../../utils/app_images.dart';
 import '../../../../widgets/custom_text.dart';
@@ -60,7 +61,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
                           Expanded(
                             child: Center(
                               child: CustomText(
-                                text: "Privacy Policy",
+                                text: "Privacy Policy".tr,
                                 fontsize: 20.sp,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -118,7 +119,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
                           SvgPicture.asset('assets/icons/star.svg'),
                           SizedBox(width: 8.w),
                           CustomText(
-                            text: "Privacy of Use",
+                            text: "Privacy of Use".tr,
                             fontsize: 18.sp,
                             fontWeight: FontWeight.w600,
                             color:AppColors.textColor020202,
@@ -129,7 +130,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
                       /// Content
                       CustomText(
                         text:
-                        "Lorem ipsum dolor sit amet consectetur. Pharetra odio porta vulputate elit eu nibh cursus neque. Amet scelerisque sit magna massa. Rutrum amet lorem dictum in. Malesuada hac cum arcu magna nunc.\n\n""Lorem ipsum dolor sit amet consectetur. Pharetra odio porta vulputate elit eu nibh cursus neque. Amet scelerisque sit magna massa. Rutrum amet lorem dictum in. Malesuada hac cum arcu magna nunc.",
+                        "Lorem ipsum dolor sit amet consectetur. Pharetra odio porta vulputate elit eu nibh cursus neque. Amet scelerisque sit magna massa. Rutrum amet lorem dictum in. Malesuada hac cum arcu magna nunc.\n\n""Lorem ipsum dolor sit amet consectetur. Pharetra odio porta vulputate elit eu nibh cursus neque. Amet scelerisque sit magna massa. Rutrum amet lorem dictum in. Malesuada hac cum arcu magna nunc.".tr,
                         fontsize: 12.sp,
                         color: AppColors.textColor6C6E72,
                         maxline: 10,
@@ -151,7 +152,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
                           SvgPicture.asset('assets/icons/star.svg'),
                           SizedBox(width: 8.w),
                           CustomText(
-                            text: "Platform Rules",
+                            text: "Platform Rules".tr,
                             fontsize: 18.sp,
                             fontWeight: FontWeight.w600,
                             color: AppColors.textColor020202,
@@ -216,7 +217,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
               /// Rule Text
               Expanded(
                 child: CustomText(
-                  text: ruleText,
+                  text: ruleText.tr,
                   fontsize: 13.sp,
                   color: AppColors.textColor6C6E72,
                   maxline: 3,

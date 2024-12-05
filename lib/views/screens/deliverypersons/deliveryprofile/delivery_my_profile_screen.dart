@@ -131,7 +131,7 @@ class DeliveryMyProfileScreen extends StatelessWidget {
 
                         /// =====================> Profile Name and Email ======================>
                         CustomText(
-                          text: "Emily James",
+                          text: "Emily James".tr,
                           fontsize: 20.sp,
                           fontWeight: FontWeight.w600,
                           color: AppColors.textColor020202,

@@ -34,7 +34,7 @@ class ChooseTypeScreen extends StatelessWidget {
                   /// ====================================> text ====================================>
                   children: [
                     Text(
-                      "Choose Your Account",
+                      "Choose Your Account".tr,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: Dimensions.fontSizeOverLarge.sp,
@@ -44,7 +44,7 @@ class ChooseTypeScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 12.h),
                     Text(
-                      "You are a user or delivery person",
+                      "You are a user or delivery person".tr,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: Dimensions.fontSizeDefault.sp,
@@ -80,7 +80,7 @@ class ChooseTypeScreen extends StatelessWidget {
                       ),
                       SizedBox(height: 20.h),
                       Text(
-                        "Client",
+                        "Client".tr,
                         style: TextStyle(
                           fontSize: Dimensions.fontSizeLarge.sp,
                           fontWeight: FontWeight.bold,
@@ -97,7 +97,7 @@ class ChooseTypeScreen extends StatelessWidget {
                           ),
                           SizedBox(width: 5.h),
                           Text(
-                            "Selected",
+                            "Selected".tr,
                             style: TextStyle(
                               fontSize: Dimensions.fontSizeDefault.sp,
                               color: controller.isClientSelected.value ? Colors.green : Colors.grey,
@@ -127,7 +127,7 @@ class ChooseTypeScreen extends StatelessWidget {
                       ),
                       SizedBox(height: 20.h),
                       Text(
-                        "Delivery Persons",
+                        "Delivery Persons".tr,
                         style: TextStyle(
                           fontSize: Dimensions.fontSizeLarge.sp,
                           fontWeight: FontWeight.bold,
@@ -145,7 +145,7 @@ class ChooseTypeScreen extends StatelessWidget {
                           ),
                           SizedBox(width: 16.h),
                           Text(
-                            "Select",
+                            "Select".tr,
                             style: TextStyle(
                               fontSize: Dimensions.fontSizeDefault.sp,
                               color: !controller.isClientSelected.value

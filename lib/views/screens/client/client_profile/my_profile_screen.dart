@@ -46,7 +46,7 @@ class MyProfileScreen extends StatelessWidget {
                     Positioned(
                       bottom: 16.h,
                       child: CustomText(
-                        text: "My Profile",
+                        text: "My Profile".tr,
                         fontsize: 20.sp,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -131,14 +131,14 @@ class MyProfileScreen extends StatelessWidget {
 
                         /// =====================> Profile Name and Email ======================>
                         CustomText(
-                          text: "Emily James",
+                          text: "Emily James".tr,
                           fontsize: 20.sp,
                           fontWeight: FontWeight.w600,
                           color: AppColors.textColor020202,
                         ),
                         SizedBox(height: 4.h),
                         CustomText(
-                          text: "Emily045@gmail.com",
+                          text: "Emily045@gmail.com".tr,
                           fontsize: 12.sp,
                           fontWeight: FontWeight.w400,
                           color: AppColors.textColor6C6E72,
@@ -156,7 +156,7 @@ class MyProfileScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomText(
-                        text: "ACCOUNT OVERVIEW",
+                        text: "ACCOUNT OVERVIEW".tr,
                         fontsize: 14.sp,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textColor6C6E72,
@@ -165,20 +165,20 @@ class MyProfileScreen extends StatelessWidget {
                       /// Phone Number Card
                       _infoCard(
                         icon: Icons.phone,
-                        title: "Phone Number",
-                        subtitle: "+92 345 4556 567",
+                        title: "Phone Number".tr,
+                        subtitle: "+92 345 4556 567".tr,
                       ),
                       /// Address Card
                       _infoCard(
                         icon: Icons.location_on,
-                        title: "Address",
-                        subtitle: "Akshya Nagar 1st Block 1st Cross,\nRamamurthy nagar, Bangalore-560016",
+                        title: "Address".tr,
+                        subtitle: "Akshya Nagar 1st Block 1st Cross,\nRamamurthy nagar, Bangalore-560016".tr,
                       ),
                       /// Language Change Card
                       _infoCard(
                         icon: Icons.language,
-                        title: "Change Language",
-                        subtitle: "English",
+                        title: "Change Language".tr,
+                        subtitle: "English".tr,
                       ),
                     ],
                   ),
@@ -191,7 +191,7 @@ class MyProfileScreen extends StatelessWidget {
                      onTap: (){
                        Get.toNamed(AppRoutes.editProfileScreen);
                      },
-                     title: 'Edit Profile'),
+                     title: 'Edit Profile'.tr),
                ),
                 SizedBox(height: 24.h),
 
@@ -239,14 +239,14 @@ class MyProfileScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomText(
-                text: title,
+                text: title.tr,
                 fontsize: 14.sp,
                 fontWeight: FontWeight.w600,
                 color: AppColors.textColor333333,
               ),
               SizedBox(height: 4.h),
               CustomText(
-                text: subtitle,
+                text: subtitle.tr,
                 fontsize: 14.sp,
                 fontWeight: FontWeight.w400,
                 color: AppColors.textColor6C6E72,
@@ -275,7 +275,7 @@ class MyProfileScreen extends StatelessWidget {
           children: [
             ListTile(
               leading: const Icon(Icons.photo_library),
-              title: Text("Pick from Gallery"),
+              title: Text("Pick from Gallery".tr),
               onTap: () {
                 profileController.pickImageFromGallery();
                 Get.back();
@@ -283,7 +283,7 @@ class MyProfileScreen extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(Icons.camera_alt),
-              title: Text("Capture with Camera"),
+              title: Text("Capture with Camera".tr),
               onTap: () {
                 profileController.captureImageFromCamera();
                 Get.back();

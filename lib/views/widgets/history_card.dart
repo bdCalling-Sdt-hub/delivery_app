@@ -2,6 +2,7 @@ import 'package:delivery_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class HistoryCard extends StatelessWidget {
   final String imageUrl;
@@ -70,7 +71,7 @@ class HistoryCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      name,
+                      name.tr,
                       style: TextStyle(
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w600,
@@ -79,7 +80,7 @@ class HistoryCard extends StatelessWidget {
                     ),
                     SizedBox(height: 4.h),
                     Text(
-                      title,
+                      title.tr,
                       style: TextStyle(
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w400,
@@ -97,7 +98,7 @@ class HistoryCard extends StatelessWidget {
                         ),
                         SizedBox(width: 4.w),
                         Text(
-                          subtitle,
+                          subtitle.tr,
                           style: TextStyle(
                             fontSize: 10.sp,
                             color: AppColors.textColor6C6E72,

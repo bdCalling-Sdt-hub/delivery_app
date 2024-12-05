@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import '../../../../utils/app_images.dart';
 
 class ArticleDetailsScreen extends StatelessWidget {
@@ -53,7 +54,7 @@ class ArticleDetailsScreen extends StatelessWidget {
                           ),
                           /// Header Title
                           Text(
-                            "Article Details",
+                            "Article Details".tr,
                             style: TextStyle(
                               fontSize: 20.sp,
                               fontWeight: FontWeight.bold,
@@ -96,7 +97,7 @@ class ArticleDetailsScreen extends StatelessWidget {
 
                       /// Title Section
                       Text(
-                        "Common Delivery Mistakes and How to Avoid Them",
+                        "Common Delivery Mistakes and How to Avoid Them".tr,
                         style: TextStyle(
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w600,
@@ -107,7 +108,7 @@ class ArticleDetailsScreen extends StatelessWidget {
 
                       /// Description Section
                       Text(
-                        "Lorem ipsum dolor sit amet consectetur. Id amet facilisis sem ultricies pellentesque. Morbi mauris ut fringilla a posuere egestas quis ut sagittis. Pharetra diam faucibus vitae gravida purus etiam nisi nisl. Id purus ut vulputate mauris. Sed lacus hendrerit varius suscipit amet placerat arcu nisi. Eget massa in nibh et facilisis facilisis diam.",
+                        "Lorem ipsum dolor sit amet consectetur. Id amet facilisis sem ultricies pellentesque. Morbi mauris ut fringilla a posuere egestas quis ut sagittis. Pharetra diam faucibus vitae gravida purus etiam nisi nisl. Id purus ut vulputate mauris. Sed lacus hendrerit varius suscipit amet placerat arcu nisi. Eget massa in nibh et facilisis facilisis diam.".tr,
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
@@ -115,14 +116,12 @@ class ArticleDetailsScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 22.h),
-
                       /// Divider Section
                       Divider(color: Colors.grey.shade300, thickness: 1),
                       SizedBox(height: 20.h),
-
                       /// Another Title Section
                       Text(
-                        "Sustainable Delivery Options",
+                        "Sustainable Delivery Options".tr,
                         style: TextStyle(
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w600,
@@ -133,7 +132,7 @@ class ArticleDetailsScreen extends StatelessWidget {
 
                       /// Another Description Section
                       Text(
-                        "Lorem ipsum dolor sit amet consectetur. Id amet facilisis sem ultricies pellentesque. Morbi mauris ut fringilla a posuere egestas quis ut sagittis. Pharetra diam faucibus vitae gravida purus etiam nisi nisl. Id purus ut vulputate mauris. Sed lacus hendrerit varius suscipit amet placerat arcu nisi. Eget massa in nibh et facilisis facilisis diam.",
+                        "Lorem ipsum dolor sit amet consectetur. Id amet facilisis sem ultricies pellentesque. Morbi mauris ut fringilla a posuere egestas quis ut sagittis. Pharetra diam faucibus vitae gravida purus etiam nisi nisl. Id purus ut vulputate mauris. Sed lacus hendrerit varius suscipit amet placerat arcu nisi. Eget massa in nibh et facilisis facilisis diam.".tr,
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,

@@ -41,7 +41,7 @@ class HistoryScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 32.h),
                       child: Text(
-                        "History",
+                        "History".tr,
                         style: TextStyle(
                           fontSize: 20.sp,
                           fontWeight: FontWeight.bold,
@@ -52,7 +52,6 @@ class HistoryScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 15.h),
-
                 /// ===============================> History List Section =====================>
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -66,8 +65,8 @@ class HistoryScreen extends StatelessWidget {
                         child: HistoryCard(
                           imageUrl: AppImages.arrowImage,
                           index: index,
-                          name: "Bucket Package",
-                          title: "Quantity: 01",
+                          name: "Bucket Package".tr,
+                          title: "Quantity: 01".tr,
                           subtitle: controller.subtitles[index],
                           icon: '',
                           onTap: () => controller.pickDate(index),

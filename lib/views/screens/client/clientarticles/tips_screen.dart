@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_images.dart';
 import '../../../widgets/custom_text.dart';
@@ -16,7 +17,7 @@ class TipsScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: CustomText(
-          text: 'Tips',
+          text: 'Tips'.tr,
           fontsize: 20.h,
           color: AppColors.textColor333333,
         ),
@@ -40,9 +41,9 @@ class TipsScreen extends StatelessWidget {
                 _buildGridSection(2, (context, index) {
                   return TipsCard(
                     imageUrl: AppImages.tipsImage,
-                    name: "Top 5 Tips",
-                    title: "Lorem ipsum dolor sit amet consectetur.",
-                    subtitle: "Subtitle here",
+                    name: "Top 5 Tips".tr,
+                    title: "Lorem ipsum dolor sit amet consectetur.".tr,
+                    subtitle: "Subtitle here".tr,
                     icon: AppImages.bookmarkImage,
                     onTap: () {},
                   );

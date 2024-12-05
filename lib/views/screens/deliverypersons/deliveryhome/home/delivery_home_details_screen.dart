@@ -17,7 +17,7 @@ class DeliveryHomeDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Location'),
+        title:  Text('Location'.tr),
         actions: [
           IconButton(
             icon: const Icon(Icons.check),
@@ -102,7 +102,7 @@ class DeliveryHomeDetailsScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Alexa Georgia',
+                              'Alexa Georgia'.tr,
                               style: TextStyle(
                                 fontSize: 20.sp,
                                 fontWeight: FontWeight.w600,
@@ -110,7 +110,7 @@ class DeliveryHomeDetailsScreen extends StatelessWidget {
                             ),
                             SizedBox(height: 5.h),
                             Text(
-                              'Driver',
+                              'Driver'.tr,
                               style: TextStyle(
                                 fontSize: 16.sp,
                                 color: AppColors.textColor6C6E72,
@@ -122,7 +122,7 @@ class DeliveryHomeDetailsScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 29.h),
                     CustomGradientButton(
-                      title: 'Mark As Complete',
+                      title: 'Mark As Complete'.tr,
                       onTap: () {
                         Get.toNamed(AppRoutes.deliveryConfirmationScreen);
 
@@ -161,7 +161,7 @@ class DeliveryHomeDetailsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  title,
+                  title.tr,
                   style: const TextStyle(
                     fontSize: 10,
                     fontWeight: FontWeight.w500,
@@ -169,7 +169,7 @@ class DeliveryHomeDetailsScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  value,
+                  value.tr,
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,

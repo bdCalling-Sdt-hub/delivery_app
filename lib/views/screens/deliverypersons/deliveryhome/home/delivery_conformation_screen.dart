@@ -5,6 +5,7 @@ import 'package:delivery_app/views/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../../../utils/app_images.dart';
@@ -37,7 +38,7 @@ class _DeliveryConfirmationScreenState
             children: [
               ListTile(
                 leading: const Icon(Icons.camera_alt),
-                title: const Text("Take a Photo"),
+                title:  Text("Take a Photo".tr),
                 onTap: () async {
                   Navigator.pop(context);
                   final pickedFile =
@@ -51,7 +52,7 @@ class _DeliveryConfirmationScreenState
               ),
               ListTile(
                 leading: const Icon(Icons.photo_library),
-                title: const Text("Choose from Gallery"),
+                title:  Text("Choose from Gallery".tr),
                 onTap: () async {
                   Navigator.pop(context);
                   final pickedFile =
@@ -135,7 +136,7 @@ class _DeliveryConfirmationScreenState
                           Expanded(
                             child: Center(
                               child: CustomText(
-                                text: "Delivery Confirmation",
+                                text: "Delivery Confirmation".tr,
                                 fontsize: 20.sp,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -154,9 +155,8 @@ class _DeliveryConfirmationScreenState
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      /// No. of Bucket Delivered Input
                       Text(
-                        "No. of Bucket Delivered",
+                        "No. of Bucket Delivered".tr,
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
@@ -168,7 +168,7 @@ class _DeliveryConfirmationScreenState
                         controller: bucketController,
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
-                          hintText: 'Enter number of buckets',
+                          hintText: 'Enter number of buckets'.tr,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8.r),
                             borderSide:
@@ -182,7 +182,7 @@ class _DeliveryConfirmationScreenState
 
                       /// Status Dropdown
                       Text(
-                        "Status",
+                        "Status".tr,
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
@@ -199,7 +199,7 @@ class _DeliveryConfirmationScreenState
                           contentPadding: EdgeInsets.symmetric(
                               horizontal: 16.w, vertical: 12.h),
                         ),
-                        hint: const Text("Select status"),
+                        hint:  Text("Select status".tr),
                         items: statuses.map((String status) {
                           return DropdownMenuItem<String>(
                             value: status,
@@ -213,10 +213,9 @@ class _DeliveryConfirmationScreenState
                         },
                       ),
                       SizedBox(height: 20.h),
-
                       /// Take a Photo Section
                       Text(
-                        "Take a Photo",
+                        "Take a Photo".tr,
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
@@ -250,7 +249,7 @@ class _DeliveryConfirmationScreenState
                               ),
                               SizedBox(height: 8.h),
                               Text(
-                                "Take a Photo or Click here",
+                                "Take a Photo or Click here".tr,
                                 style: TextStyle(
                                   color: const Color(0xFF333333),
                                   fontSize: 14.sp,
@@ -269,7 +268,7 @@ class _DeliveryConfirmationScreenState
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: CustomGradientButton(
                       onTap: (){},
-                      title: 'Submit'),
+                      title: 'Submit'.tr),
                 )
               ],
             ),

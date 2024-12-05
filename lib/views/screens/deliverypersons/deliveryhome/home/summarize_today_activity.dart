@@ -116,7 +116,7 @@ class SummarizeTodayActivity extends StatelessWidget {
 
                             /// Text
                             CustomText(
-                              text: "Completed Deliveries",
+                              text: "Completed Deliveries".tr,
                               fontsize: 16.sp,
                               fontWeight: FontWeight.w500,
                               color: const Color(0xFF333333),
@@ -126,7 +126,7 @@ class SummarizeTodayActivity extends StatelessWidget {
 
                         /// Number
                         CustomText(
-                          text: "120",
+                          text: "120".tr,
                           fontsize: 20.sp,
                           fontWeight: FontWeight.bold,
                           color: AppColors.primaryColor,
@@ -171,7 +171,7 @@ class SummarizeTodayActivity extends StatelessWidget {
 
                                 /// Text
                                 CustomText(
-                                  text: "Problem Encountered",
+                                  text: "Problem Encountered".tr,
                                   fontsize: 16.sp,
                                   fontWeight: FontWeight.w500,
                                   color: const Color(0xFF333333),
@@ -181,7 +181,7 @@ class SummarizeTodayActivity extends StatelessWidget {
 
                             /// Number
                             CustomText(
-                              text: "120",
+                              text: "120".tr,
                               fontsize: 20.sp,
                               fontWeight: FontWeight.bold,
                               color: AppColors.primaryColor,
@@ -192,14 +192,14 @@ class SummarizeTodayActivity extends StatelessWidget {
 
                         /// List of problems
                         CustomText(
-                          text: "1. Lorem ipsum dolor sit amet consectetur.",
+                          text: "1. Lorem ipsum dolor sit amet consectetur.".tr,
                           fontsize: 14.sp,
                           fontWeight: FontWeight.w400,
                           color: const Color(0xFF333333),
                         ),
                         SizedBox(height: 4.h),
                         CustomText(
-                          text: "2. Lorem ipsum dolor sit amet consectetur.",
+                          text: "2. Lorem ipsum dolor sit amet consectetur.".tr,
                           fontsize: 14.sp,
                           fontWeight: FontWeight.w400,
                           color: const Color(0xFF333333),
@@ -217,7 +217,7 @@ class SummarizeTodayActivity extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomText(
-                        text: "General Comment on the Way",
+                        text: "General Comment on the Way".tr,
                         fontsize: 16.sp,
                         fontWeight: FontWeight.w500,
                         color: const Color(0xFF333333),
@@ -228,7 +228,7 @@ class SummarizeTodayActivity extends StatelessWidget {
                       TextField(
                         maxLines: 3,
                         decoration: InputDecoration(
-                          hintText: "Enter your comments",
+                          hintText: "Enter your comments".tr,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8.r),
                             borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
@@ -249,7 +249,7 @@ class SummarizeTodayActivity extends StatelessWidget {
                   child: CustomGradientButton(
                       onTap: (){
                         Get.toNamed(AppRoutes.activitySummaryScreen);
-                      }, title: "Submit"),
+                      }, title: "Submit".tr),
                 ),
 
 

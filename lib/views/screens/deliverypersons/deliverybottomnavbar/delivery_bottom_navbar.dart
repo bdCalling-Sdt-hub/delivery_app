@@ -45,7 +45,7 @@ class _DeliveryBottomNavBarState extends State<DeliveryBottomNavBar> {
                 ),
               ),
               CustomText(
-                text: title,
+                text: title.tr,
                 color: widget.menuIndex == index ? Colors.white : Colors.black,
                 fontsize: 12.h,
               ),

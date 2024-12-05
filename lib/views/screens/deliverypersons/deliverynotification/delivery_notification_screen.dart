@@ -3,6 +3,7 @@ import 'package:delivery_app/views/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class DeliveryNotificationScreen extends StatelessWidget {
   const DeliveryNotificationScreen({Key? key}) : super(key: key);
@@ -45,7 +46,7 @@ class DeliveryNotificationScreen extends StatelessWidget {
                       Expanded(
                         child: Center(
                           child: Text(
-                            'Notification',
+                            'Notification'.tr,
                             style: TextStyle(
                               fontSize: 20.sp,
                               fontWeight: FontWeight.w600,
@@ -68,7 +69,7 @@ class DeliveryNotificationScreen extends StatelessWidget {
                 children: [
                   /// New Entry Notification
                   notificationTile(
-                    title: 'New Entry',
+                    title: 'New Entry'.tr,
                     subtitle: 'You have new Contest in this space.',
                     time: '10:24 PM',
                     showDot: true,
@@ -76,7 +77,7 @@ class DeliveryNotificationScreen extends StatelessWidget {
                   SizedBox(height: 5.h),
                   /// New Request Notification
                   notificationTile(
-                    title: 'New Request',
+                    title: 'New Request'.tr,
                     subtitle: 'Your request created successfully.',
                     time: 'Today',
                   ),
@@ -113,9 +114,9 @@ class DeliveryNotificationScreen extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
-          border: const Border(
+          border: Border(
             left: BorderSide(
               color: AppColors.textColor99979D,
               width: 1,
@@ -154,7 +155,7 @@ class DeliveryNotificationScreen extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Text(
-                          title,
+                          title.tr,
                           style: TextStyle(
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w600,
@@ -171,7 +172,7 @@ class DeliveryNotificationScreen extends StatelessWidget {
                       SizedBox(width: 10.w),
                       /// Time
                       CustomText(
-                        text: time,
+                        text: time.tr,
                         fontsize: 12.sp,
                         fontWeight: FontWeight.w400,
                         color: AppColors.textColor99979D,
@@ -181,7 +182,7 @@ class DeliveryNotificationScreen extends StatelessWidget {
                   SizedBox(height: 5.h),
                   /// Subtitle
                   CustomText(
-                    text: subtitle,
+                    text: subtitle.tr,
                     fontsize: 14.sp,
                     fontWeight: FontWeight.w400,
                     color: AppColors.textColor6C6E72,

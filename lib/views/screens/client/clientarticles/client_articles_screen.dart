@@ -46,7 +46,7 @@ class ClientArticleScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 30.h),
                       child: Text(
-                        "Articles",
+                        "Articles".tr,
                         style: TextStyle(
                           fontSize: 22.sp,
                           fontWeight: FontWeight.bold,
@@ -61,7 +61,7 @@ class ClientArticleScreen extends StatelessWidget {
                 /// ==================================> Beginners Section Header =======================================>
                 _buildSectionHeader(
                   context,
-                  title: "Beginners",
+                  title: "Beginners".tr,
                   onTap: () {
                     Get.toNamed(AppRoutes.beginnersScreen);
                   },
@@ -72,9 +72,9 @@ class ClientArticleScreen extends StatelessWidget {
                 _buildGridSection(4, (context, index) {
                   return BeginnersCard(
                     imageUrl: AppImages.articlesImage,
-                    name: "Common Delivery",
-                    title: "Lorem ipsum dolor sit amet consectetur.",
-                    subtitle: "Subtitle here",
+                    name: "Common Delivery".tr,
+                    title: "Lorem ipsum dolor sit amet consectetur.".tr,
+                    subtitle: "Subtitle here".tr,
                     icon: AppImages.bookmarkImage,
                     onTap: () {
                       Get.toNamed(AppRoutes.articleDetailsScreen);
@@ -85,20 +85,19 @@ class ClientArticleScreen extends StatelessWidget {
                 /// ===================================>  Advanced Section Header =================================>
                 _buildSectionHeader(
                   context,
-                  title: "Advanced",
+                  title: "Advanced".tr,
                   onTap: () {
                     Get.toNamed(AppRoutes.advancedScreen);
                   },
                 ),
                 SizedBox(height: 14.h),
-
                 /// ==============================>Advanced Cards Grid =============================>
                 _buildGridSection(2, (context, index) {
                   return AdvancedCard(
                     imageUrl: AppImages.advancedImage,
-                    name: "The Future of Package",
-                    title: "Lorem ipsum dolor sit amet consectetur.",
-                    subtitle: "Subtitle here",
+                    name: "The Future of Package".tr,
+                    title: "Lorem ipsum dolor sit amet consectetur.".tr,
+                    subtitle: "Subtitle here".tr,
                     icon: AppImages.bookmarkImage,
                     onTap: () {},
                   );
@@ -107,7 +106,7 @@ class ClientArticleScreen extends StatelessWidget {
                 /// ===========================> Tips Section Header ===============================>
                 _buildSectionHeader(
                   context,
-                  title: "Tips",
+                  title: "Tips".tr,
                   onTap: () {
                     Get.toNamed(AppRoutes.tipsScreen);
                   },
@@ -117,9 +116,9 @@ class ClientArticleScreen extends StatelessWidget {
                 _buildGridSection(2, (context, index) {
                   return TipsCard(
                     imageUrl: AppImages.tipsImage,
-                    name: "Top 5 Tips",
-                    title: "Lorem ipsum dolor sit amet consectetur.",
-                    subtitle: "Subtitle here",
+                    name: "Top 5 Tips".tr,
+                    title: "Lorem ipsum dolor sit amet consectetur.".tr,
+                    subtitle: "Subtitle here".tr,
                     icon: AppImages.bookmarkImage,
                     onTap: () {},
                   );
@@ -141,7 +140,7 @@ class ClientArticleScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           CustomText(
-            text: title,
+            text: title.tr,
             fontsize: 18.sp,
             fontWeight: FontWeight.w600,
             color: AppColors.textColor020202,
@@ -151,7 +150,7 @@ class ClientArticleScreen extends StatelessWidget {
             child: Row(
               children: [
                 CustomText(
-                  text: 'See all',
+                  text: 'See all'.tr,
                   fontsize: 14.sp,
                   fontWeight: FontWeight.w500,
                   color: AppColors.redF37B1C,

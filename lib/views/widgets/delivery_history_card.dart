@@ -1,6 +1,7 @@
 import 'package:delivery_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class DeliveryHistoryCard extends StatelessWidget {
   final String imageUrl;
@@ -61,7 +62,7 @@ class DeliveryHistoryCard extends StatelessWidget {
                 children: [
                   // Date Text
                   Text(
-                    subtitle,
+                    subtitle.tr,
                     style: TextStyle(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w600,
@@ -69,10 +70,9 @@ class DeliveryHistoryCard extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 4.h),
-
                   // Completed Orders Text
                   Text(
-                    'Completed Orders: $completedOrders',
+                    'Completed Orders: $completedOrders'.tr,
                     style: TextStyle(
                       fontSize: 12.sp,
                       color: Colors.grey,
@@ -96,7 +96,7 @@ class DeliveryHistoryCard extends StatelessWidget {
                 ),
               ),
               child: Text(
-                'View Details',
+                'View Details'.tr,
                 style: TextStyle(
                   fontSize: 12.sp,
                   color: Colors.white,
