@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import '../../../../helpers/network_connection.dart';
 import '../../../../routes/app_routes.dart';
 import '../../../../utils/app_colors.dart';
-import '../../../../utils/app_icons.dart';
 import '../../../widgets/custom_text.dart';
 
 class DeliveryBottomNavBar extends StatefulWidget {
