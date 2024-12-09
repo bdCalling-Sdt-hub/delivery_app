@@ -310,7 +310,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       ),
                       SizedBox(height: 27.h),
                       CustomGradientButton(onTap: (){
-                        Get.toNamed(AppRoutes.verifyEmailAddressScreen);
+                        // Get.toNamed(AppRoutes.verifyEmailAddressScreen);
 
                       }, title: 'Save'.tr),
                       SizedBox(height: 24.h),

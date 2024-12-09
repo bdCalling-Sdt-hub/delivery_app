@@ -48,29 +48,33 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween, // Adjust alignment
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Welcome Back!".tr,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: Dimensions.fontSizeOverLarge.sp,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                      SingleChildScrollView(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Welcome Back!".tr,
+                              textAlign: TextAlign.center,
+                              maxLines: 3,
+                              style: TextStyle(
+                                fontSize: Dimensions.fontSizeOverLarge.sp,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
-                          SvgPicture.asset(
-                            'assets/icons/welcome.svg',
-                            width: 34.w,
-                            height: 34.h,
-                          ),
-                        ],
+                            SvgPicture.asset(
+                              'assets/icons/welcome.svg',
+                              width: 34.w,
+                              height: 34.h,
+                            ),
+                          ],
+                        ),
                       ),
                       SizedBox(height: 12.h),
                       Text(
                         "Glad to see you again! Please log in to continue.".tr,
+                        maxLines: 8,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: Dimensions.fontSizeDefault.sp,

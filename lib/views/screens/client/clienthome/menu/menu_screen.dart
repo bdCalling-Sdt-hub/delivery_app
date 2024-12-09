@@ -110,7 +110,7 @@ class MenuScreen extends StatelessWidget {
                           icon: Icons.language,
                           title: "Language".tr,
                           onTap: () {
-                            Get.toNamed(AppRoutes.languageScreen);
+                            Get.toNamed(AppRoutes.clientLanguageScreen);
                           },
                         ),
                         Divider(height: 1.h, color: AppColors.backgroundColorF0F5E9),

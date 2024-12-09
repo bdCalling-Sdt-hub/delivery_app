@@ -71,6 +71,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       Text(
                         "Sign up to get started and unlock all features!".tr,
                         textAlign: TextAlign.center,
+                        maxLines: 10,
                         style: TextStyle(
                           fontSize: Dimensions.fontSizeDefault.sp,
                           color: Colors.white70,

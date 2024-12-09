@@ -63,7 +63,7 @@ class AppRoutes {
   static const String editProfileScreen = "/EditProfileScreen.dart";
   static const String changePasswordScreen = "/ChangePasswordScreen.dart";
   static const String menuHistoryScreen = "/MenuHistoryScreen.dart";
-  static const String languageScreen = "/LanguageScreen.dart";
+  static const String clientLanguageScreen = "/clientLanguageScreen.dart";
   static const String savedArticlesScreen = "/SavedArticlesScreen.dart";
   static const String privacyPolicyScreen = "/PrivacyPolicyScreen.dart";
   static const String termServicesScreen = "/TermServicesScreen.dart";
@@ -109,7 +109,7 @@ class AppRoutes {
     GetPage(name: editProfileScreen, page: () => EditProfileScreen()),
     GetPage(name: changePasswordScreen, page: () => ChangePasswordScreen()),
     GetPage(name: menuHistoryScreen, page: () => MenuHistoryScreen()),
-    GetPage(name: languageScreen, page: () => LanguageScreen()),
+    GetPage(name: clientLanguageScreen, page: () => ClientLanguageScreen()),
     GetPage(name: savedArticlesScreen, page: () => SavedArticlesScreen()),
     GetPage(name: privacyPolicyScreen, page: () => PrivacyPolicyScreen()),
     GetPage(name: termServicesScreen, page: () => TermsServicesScreen()),

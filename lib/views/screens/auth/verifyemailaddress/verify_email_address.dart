@@ -90,6 +90,7 @@ class _VerifyEmailAddressScreenState extends State<VerifyEmailAddressScreen> {
                       Text(
                         "Enter the 6 digit code that we sent on your email.".tr,
                         textAlign: TextAlign.start,
+                        maxLines: 10,
                         style: TextStyle(
                           fontSize: Dimensions.fontSizeDefault.sp,
                           color: Colors.white70,

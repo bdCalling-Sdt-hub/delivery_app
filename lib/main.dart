@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import 'controllers/localization_controller.dart';
+import 'controllers/theme_controller.dart';
 import 'helpers/di.dart' as di;
 
 void main() async {
@@ -20,24 +22,30 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-        designSize: const Size(393, 852),
-        minTextAdapt: true,
-        splitScreenMode: true,
-        builder: (_, child) {
-          return GetMaterialApp(
-            title: AppConstants.APP_NAME,
-            debugShowCheckedModeBanner: false,
-            navigatorKey: Get.key,
-            theme: light(),
-            defaultTransition: Transition.topLevel,
-            translations: Messages(languages: languages),
-            fallbackLocale: Locale(AppConstants.languages[0].languageCode,
-                AppConstants.languages[0].countryCode),
-            transitionDuration: const Duration(milliseconds: 500),
-            getPages: AppRoutes.routes,
-            initialRoute: AppRoutes.splashScreen,
-          );
-        });
+    return  GetBuilder<ThemeController>(builder: (themeController) {
+      return GetBuilder<LocalizationController>(builder: (localizeController) {
+        return ScreenUtilInit(
+            designSize: const Size(393, 852),
+            minTextAdapt: true,
+            splitScreenMode: true,
+            builder: (_, child) {
+              return GetMaterialApp(
+                title: AppConstants.APP_NAME,
+                debugShowCheckedModeBanner: false,
+                navigatorKey: Get.key,
+                theme: light(),
+                defaultTransition: Transition.topLevel,
+                locale: localizeController.locale,
+                translations: Messages(languages: languages),
+                fallbackLocale: Locale(AppConstants.languages[0].languageCode, AppConstants.languages[0].countryCode),
+                transitionDuration: const Duration(milliseconds: 500),
+                getPages: AppRoutes.routes,
+                initialRoute: AppRoutes.splashScreen,
+              );
+            });
+      });
+    });
+
+
   }
 }

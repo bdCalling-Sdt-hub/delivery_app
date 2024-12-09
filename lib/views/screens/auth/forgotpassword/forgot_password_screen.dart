@@ -57,9 +57,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       ),
                       SizedBox(height: 12.h),
                       Text(
-                        "Not to worry it happens to the best of us. Please enter your email address below.".tr,
+                        "Not to worry it happens to the best of us. Please enter your email address below".tr,
                         textAlign: TextAlign.center,
-                        maxLines: 4,
+                        maxLines: 10,
                         style: TextStyle(
                           fontSize: Dimensions.fontSizeDefault.sp,
                           color: Colors.white70,
