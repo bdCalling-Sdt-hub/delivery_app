@@ -191,6 +191,7 @@ class DeliveryHomeScreen extends StatelessWidget {
         SizedBox(height: 2.h),
         CustomText(
           text: 'Check below for your upcoming deliveries'.tr,
+          maxline: 10,
           fontsize: 14.sp,
           fontWeight: FontWeight.w500,
           color: AppColors.textColor6C6E72,
@@ -218,26 +219,29 @@ class DeliveryHomeScreen extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CustomText(
-                  text: 'Seamless Ordering'.tr,
-                  fontsize: 18.sp,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.textColorFFFFFF,
-                ),
-                SizedBox(height: 4.h),
-                CustomText(
-                  text: 'Simplifying Your Delivery Experience →'.tr,
-                  fontsize: 14.sp,
-                  fontWeight: FontWeight.w400,
-                  maxline: 2,
-                  textAlign: TextAlign.start,
-                  color:AppColors.textColorFFFFFF,
-                ),
-              ],
+            child: SingleChildScrollView(
+
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomText(
+                    text: 'Seamless Ordering'.tr,
+                    fontsize: 18.sp,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.textColorFFFFFF,
+                  ),
+                  SizedBox(height: 4.h),
+                  CustomText(
+                    text: 'Simplifying Your Delivery Experience →'.tr,
+                    fontsize: 14.sp,
+                    fontWeight: FontWeight.w400,
+                    maxline: 2,
+                    textAlign: TextAlign.start,
+                    color:AppColors.textColorFFFFFF,
+                  ),
+                ],
+              ),
             ),
           ),
           SizedBox(width: 27.w),

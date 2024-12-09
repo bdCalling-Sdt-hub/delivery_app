@@ -102,7 +102,7 @@ class DeliveryMenuScreen extends StatelessWidget {
                           icon: Icons.access_time_sharp,
                           title: "Timing".tr,
                           onTap: () {
-                            // Get.toNamed(AppRoutes.faqsScreen);
+                            Get.toNamed(AppRoutes.timingScreen);
                           },
                         ),
                         Divider(height: 1.h, color: AppColors.backgroundColorF0F5E9),
